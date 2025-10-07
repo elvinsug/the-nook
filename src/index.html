@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-scrollbar">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,8 +13,49 @@
     <link rel="stylesheet" href="global.css" />
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
-    <main class="flex flex-col overflow-x-hidden">
+  <body class="no-scrollbar">
+    <main class="flex flex-col overflow-x-hidden relative">
+        <!-- Navbar -->
+         <nav class="fixed left-4 right-4 top-4 z-50 bg-white">
+            <div class="flex items-center justify-between px-4 md:px-6 py-3 md:py-4 relative">
+                <!-- Logo -->
+                <div class="flex-shrink-0 px-2">
+                    <img src="../public/logo/with-text-dark.svg" alt="Logo" class="w-auto h-9 md:h-12">
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center gap-9 h6 absolute left-1/2 transform -translate-x-1/2">
+                    <a href="#home" class="hover:opacity-60 transition-opacity">Home</a>
+                    <a href="#menu" class="hover:opacity-60 transition-opacity">Menu</a>
+                    <a href="#contact" class="hover:opacity-60 transition-opacity">Contact</a>
+                </div>
+                
+                <!-- Right Side -->
+                <div class="flex items-center gap-3 md:gap-4">
+                    <button class="btn-primary justify-center">
+                        <p class="h6">Reserve Now</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                          <path d="M6 12L10 8L6 4" stroke="white" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    
+                    <!-- Mobile Menu Toggle -->
+                    <button class="md:hidden p-2" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
+                        <img src="../public/icon/menu.svg" alt="Menu" class="w-6 h-6">
+                    </button>
+                </div>
+                
+                <!-- Mobile Menu Dropdown -->
+                <div id="mobileMenu" class="hidden md:hidden absolute top-full left-0 right-0 border-t-black/10 border-t-[1px] bg-white p-6">
+                    <div class="flex flex-col h4 gap-5">
+                        <a href="#home" class=" hover:opacity-60 transition-opacity">Home</a>
+                        <a href="#menu" class=" hover:opacity-60 transition-opacity">Menu</a>
+                        <a href="#contact" class=" hover:opacity-60 transition-opacity">Contact</a>
+                    </div>
+                </div>
+            </div>
+         </nav>
+          
       <!-- Hero Section -->
       <section
         style="
@@ -76,7 +117,7 @@
 
       <!-- Deals Section -->
       <section class="w-screen">
-        <div class="flex flex-col px-6 md:px-20  md:py-24 gap-6 md:gap-12">
+        <div class="flex flex-col px-6 md:px-20 py-12 md:py-24 gap-6 md:gap-12">
           <!-- The Header -->
           <div class="gap-3 md:gap-5 flex flex-col">
             <div class="h6 px-4 py-3 border-black/10 border-[1px] w-fit">
@@ -95,7 +136,7 @@
                 <img
                   src="../public/home/deal-1.webp"
                   alt="Deal 1"
-                  class="w-full h-auto object-cover"
+                  class="w-full aspect-square object-cover"
                 />
                 <div class="flex flex-col gap-2 md:gap-3">
                   <p class="h4">
@@ -131,7 +172,7 @@
                 <img
                   src="../public/home/deal-2.webp"
                   alt="Deal 2"
-                  class="w-full h-auto object-cover"
+                  class="w-full aspect-square object-cover"
                 />
                 <div class="flex flex-col gap-2 md:gap-3">
                   <p class="h4">
@@ -167,7 +208,7 @@
                 <img
                   src="../public/home/deal-3.webp"
                   alt="Deal 3"
-                  class="w-full h-auto object-cover"
+                  class="w-full aspect-square object-cover"
                 />
                 <div class="flex flex-col gap-2 md:gap-3">
                   <p class="h4">
@@ -202,6 +243,746 @@
           </div>
         </div>
       </section>
+
+      <!-- Why We Exist Section -->
+      <section
+        class="w-screen grid grid-cols-1 md:grid-cols-2 px-6 md:px-20 py-12 md:py-24 gap-6 md:gap-12"
+      >
+        <!-- The Left Side -->
+        <div class="gap-4 md:gap-6 flex flex-col">
+          <div class="h6 px-4 py-3 border-black/10 border-[1px] w-fit">
+            Why We Exist
+          </div>
+          <h3 class="h3">
+            The Nook is a study café designed for focus, productivity, and peace
+            of mind.
+          </h3>
+          <h3 class="h3">
+            Every seat comes equipped with power socket, fast WiFi, and zero
+            pressure to leave.
+          </h3>
+        </div>
+
+        <!-- The Right Side -->
+        <div class="grid grid-cols-2 gap-3 md:gap-4">
+          <div
+            style="background-color: var(--beige-500)"
+            class="flex flex-col min-h-full justify-between p-4 md:p-6"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="36"
+              height="36"
+              viewBox="0 0 36 36"
+              fill="none"
+            >
+              <path
+                d="M17.9998 33.0001C26.284 33.0001 32.9998 26.2844 32.9998 18.0001C32.9998 9.71582 26.284 3.00009 17.9998 3.00009C9.71549 3.00009 2.99976 9.71582 2.99976 18.0001C2.99976 26.2844 9.71549 33.0001 17.9998 33.0001Z"
+                stroke="#1F1F1F"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M11.9998 21.0001C11.9998 21.0001 14.2498 24.0001 17.9998 24.0001C21.7498 24.0001 23.9998 21.0001 23.9998 21.0001"
+                stroke="#1F1F1F"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M13.5 13.5H13.515"
+                stroke="#1F1F1F"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M22.5 13.5H22.515"
+                stroke="#1F1F1F"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <div class="space-y-2">
+              <p class="h4">700+</p>
+              <p>Happy Students</p>
+            </div>
+          </div>
+          <div
+            style="background-color: var(--beige-500)"
+            class="flex flex-col min-h-full justify-between gap-6 p-4 md:p-6"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="36"
+              height="36"
+              viewBox="0 0 36 36"
+              fill="none"
+            >
+              <path
+                d="M18 30H18.015"
+                stroke="#1F1F1F"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M3.00049 13.23C7.12566 9.54032 12.466 7.50049 18.0005 7.50049C23.535 7.50049 28.8753 9.54032 33.0005 13.23"
+                stroke="#1F1F1F"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M7.50049 19.2886C10.3044 16.5402 14.0742 15.0007 18.0005 15.0007C21.9268 15.0007 25.6966 16.5402 28.5005 19.2886"
+                stroke="#1F1F1F"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M12.7495 24.6435C14.1515 23.2693 16.0364 22.4996 17.9995 22.4996C19.9627 22.4996 21.8475 23.2693 23.2495 24.6435"
+                stroke="#1F1F1F"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <div class="space-y-2">
+              <p class="h4">5G</p>
+              <p>WiFi Speed</p>
+            </div>
+          </div>
+          <div
+            style="background-color: var(--beige-500)"
+            class="flex flex-col min-h-full justify-between gap-6 p-4 md:p-6"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="36"
+              height="36"
+              viewBox="0 0 36 36"
+              fill="none"
+            >
+              <path
+                d="M18 9.00007V18.0001L24 21.0001"
+                stroke="#1F1F1F"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M18.0005 33C26.2848 33 33.0005 26.2843 33.0005 18C33.0005 9.71575 26.2848 3.00002 18.0005 3.00002C9.71622 3.00002 3.00049 9.71575 3.00049 18C3.00049 26.2843 9.71622 33 18.0005 33Z"
+                stroke="#1F1F1F"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <div class="space-y-2">
+              <p class="h4">8am - 11pm</p>
+              <p>Open Daily</p>
+            </div>
+          </div>
+          <div
+            style="background-color: var(--beige-500)"
+            class="flex flex-col min-h-full justify-between gap-6 p-4 md:p-6"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="36"
+              height="36"
+              viewBox="0 0 36 36"
+              fill="none"
+            >
+              <path
+                d="M17.2873 3.44252C17.353 3.30971 17.4546 3.19792 17.5804 3.11976C17.7063 3.0416 17.8516 3.00018 17.9998 3.00018C18.148 3.00018 18.2932 3.0416 18.4191 3.11976C18.545 3.19792 18.6465 3.30971 18.7123 3.44252L22.1773 10.461C22.4055 10.923 22.7425 11.3226 23.1592 11.6257C23.5759 11.9288 24.06 12.1262 24.5698 12.201L32.3188 13.335C32.4656 13.3563 32.6035 13.4182 32.717 13.5138C32.8305 13.6094 32.9149 13.7348 32.9608 13.8759C33.0067 14.017 33.0122 14.1681 32.9766 14.3122C32.9411 14.4562 32.866 14.5875 32.7598 14.691L27.1558 20.148C26.7862 20.5082 26.5097 20.9527 26.35 21.4435C26.1904 21.9342 26.1524 22.4564 26.2393 22.965L27.5623 30.675C27.5882 30.8218 27.5723 30.9729 27.5165 31.111C27.4607 31.2492 27.3672 31.3689 27.2466 31.4565C27.126 31.5441 26.9832 31.596 26.8346 31.6064C26.6859 31.6167 26.5373 31.5851 26.4058 31.515L19.4788 27.873C19.0223 27.6334 18.5145 27.5081 17.999 27.5081C17.4835 27.5081 16.9757 27.6334 16.5193 27.873L9.59377 31.515C9.46227 31.5846 9.31387 31.616 9.16545 31.6054C9.01703 31.5949 8.87455 31.5429 8.75421 31.4554C8.63388 31.3678 8.54052 31.2483 8.48475 31.1104C8.42899 30.9724 8.41306 30.8216 8.43877 30.675L9.76027 22.9665C9.84756 22.4576 9.80975 21.9351 9.65008 21.4441C9.49041 20.9531 9.21368 20.5083 8.84377 20.148L3.23977 14.6925C3.13266 14.5891 3.05676 14.4576 3.02071 14.3131C2.98467 14.1687 2.98993 14.017 3.03589 13.8753C3.08185 13.7337 3.16667 13.6078 3.28069 13.512C3.3947 13.4162 3.53333 13.3544 3.68077 13.3335L11.4283 12.201C11.9387 12.1268 12.4234 11.9296 12.8406 11.6265C13.2579 11.3234 13.5953 10.9234 13.8238 10.461L17.2873 3.44252Z"
+                stroke="black"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <div class="space-y-2">
+              <p class="h4">4.9/5.0</p>
+              <p>Google Reviews</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- How To Reserve Section -->
+      <section class="w-screen px-6">
+        <div
+          style="background-color: var(--beige-500)"
+          class="flex flex-col items-center py-12 md:py-24 gap-9 md:gap-12 px-6"
+        >
+          <!-- The Header -->
+          <div class="gap-3 md:gap-5 flex flex-col items-center">
+            <div class="h6 px-4 py-3 border-black/10 border-[1px] w-fit">
+              How To Reserve
+            </div>
+            <h3 class="h2 text-center">
+              Reserving You Seat <br />
+              Is Ridiculously Simple
+            </h3>
+          </div>
+
+          <!-- The Steps -->
+          <div class="flex flex-col md:flex-row gap-6 md:gap-24">
+            <div class="flex flex-col items-center gap-3 gap-5 w-[200px]">
+              <div
+                class="flex items-center justify-center bg-white aspect-square p-2"
+              >
+                <p class="h5">1</p>
+              </div>
+              <div class="flex flex-col gap-2 items-center">
+                <p class="h4">Pick Your Time</p>
+                <p class="opacity-60">Select date & time</p>
+              </div>
+            </div>
+            <div class="flex flex-col items-center gap-3 gap-5 w-[200px]">
+              <div
+                class="flex items-center justify-center bg-white aspect-square p-2"
+              >
+                <p class="h5">2</p>
+              </div>
+              <div class="flex flex-col gap-2 items-center">
+                <p class="h4">Choose Seat</p>
+                <p class="opacity-60">Solo/Group/Private</p>
+              </div>
+            </div>
+            <div class="flex flex-col items-center gap-3 gap-5 w-[200px]">
+              <div
+                class="flex items-center justify-center bg-white aspect-square p-2"
+              >
+                <p class="h5">3</p>
+              </div>
+              <div class="flex flex-col gap-2 items-center">
+                <p class="h4">Start Studying</p>
+                <p class="opacity-60">We've got the rest</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Seat Options Section -->
+      <section class="w-screen">
+        <div class="flex flex-col px-6 md:px-20 py-12 md:py-24 gap-6 md:gap-12">
+          <!-- The Header -->
+          <div class="gap-3 md:gap-5 flex flex-col">
+            <div class="h6 px-4 py-3 border-black/10 border-[1px] w-fit">
+              Seat Options
+            </div>
+            <h3 class="h2">Find Your Perfect Study Spot</h3>
+            <p class="opacity-60">
+              From individual desks to private rooms, every space is designed to
+              help you get your work done.
+            </p>
+          </div>
+
+          <!-- The Deals -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-9">
+            <div class="flex flex-col min-h-full justify-between gap-5">
+              <div class="flex flex-col gap-5">
+                <img
+                  src="../public/home/seat-1.webp"
+                  alt="Deal 1"
+                  class="w-full aspect-square object-cover"
+                />
+                <div class="flex flex-col gap-2 md:gap-3">
+                  <p class="h4">Solo Desk</p>
+                  <p class="opacity-60">
+                    Perfect for solo study sessions, deep focus work, or online
+                    classes
+                  </p>
+                </div>
+
+                <div class="flex flex-col gap-3">
+                  <div class="flex items-center gap-3">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="25"
+                      viewBox="0 0 24 25"
+                      fill="none"
+                    >
+                      <path
+                        d="M12 22.3334C17.5228 22.3334 22 17.8562 22 12.3334C22 6.81053 17.5228 2.33337 12 2.33337C6.47715 2.33337 2 6.81053 2 12.3334C2 17.8562 6.47715 22.3334 12 22.3334Z"
+                        stroke="black"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M16 8.33337H10C9.46957 8.33337 8.96086 8.54409 8.58579 8.91916C8.21071 9.29423 8 9.80294 8 10.3334C8 10.8638 8.21071 11.3725 8.58579 11.7476C8.96086 12.1227 9.46957 12.3334 10 12.3334H14C14.5304 12.3334 15.0391 12.5441 15.4142 12.9192C15.7893 13.2942 16 13.8029 16 14.3334C16 14.8638 15.7893 15.3725 15.4142 15.7476C15.0391 16.1227 14.5304 16.3334 14 16.3334H8"
+                        stroke="black"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M12 18.3334V6.33337"
+                        stroke="black"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <p class="h6">$4/hour</p>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="25"
+                      viewBox="0 0 24 25"
+                      fill="none"
+                    >
+                      <path
+                        d="M19 3.33337H5C3.89543 3.33337 3 4.2288 3 5.33337V19.3334C3 20.4379 3.89543 21.3334 5 21.3334H19C20.1046 21.3334 21 20.4379 21 19.3334V5.33337C21 4.2288 20.1046 3.33337 19 3.33337Z"
+                        stroke="black"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M15 9.33337L9 15.3334"
+                        stroke="black"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M9 9.33337H9.01"
+                        stroke="black"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M15 15.3334H15.01"
+                        stroke="black"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <p class="h6">10% off (for Student)</p>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="25"
+                      viewBox="0 0 24 25"
+                      fill="none"
+                    >
+                      <path
+                        d="M18 21.3334C18 19.2116 17.1571 17.1768 15.6569 15.6765C14.1566 14.1762 12.1217 13.3334 10 13.3334C7.87827 13.3334 5.84344 14.1762 4.34315 15.6765C2.84285 17.1768 2 19.2116 2 21.3334"
+                        stroke="black"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M10 13.3334C12.7614 13.3334 15 11.0948 15 8.33337C15 5.57195 12.7614 3.33337 10 3.33337C7.23858 3.33337 5 5.57195 5 8.33337C5 11.0948 7.23858 13.3334 10 13.3334Z"
+                        stroke="black"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M21.9998 20.3333C21.9998 16.9633 19.9998 13.8333 17.9998 12.3333C18.6572 11.8401 19.1829 11.1924 19.5304 10.4476C19.8778 9.70278 20.0363 8.88379 19.9918 8.06313C19.9473 7.24246 19.7012 6.44541 19.2753 5.74252C18.8493 5.03964 18.2567 4.45259 17.5498 4.03333"
+                        stroke="black"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <p class="h6">max. 2 people</p>
+                  </div>
+                </div>
+              </div>
+              <button class="btn-primary md:w-fit justify-center">
+                <p class="h6">Reserve Now</p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                >
+                  <path
+                    d="M6 12L10 8L6 4"
+                    stroke="white"
+                    stroke-width="1.33333"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="flex flex-col min-h-full justify-between gap-5">
+              <div class="flex flex-col gap-5">
+                <img
+                  src="../public/home/seat-2.webp"
+                  alt="Deal 1"
+                  class="w-full aspect-square object-cover"
+                />
+                <div class="flex flex-col gap-2 md:gap-3">
+                  <p class="h4">Group Table</p>
+                  <p class="opacity-60">
+                    Perfect for study groups, discussion, and collaborative work
+                  </p>
+                </div>
+
+                <div class="flex flex-col gap-3">
+                  <div class="flex items-center gap-3">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="25"
+                      viewBox="0 0 24 25"
+                      fill="none"
+                    >
+                      <path
+                        d="M12 22.3334C17.5228 22.3334 22 17.8562 22 12.3334C22 6.81053 17.5228 2.33337 12 2.33337C6.47715 2.33337 2 6.81053 2 12.3334C2 17.8562 6.47715 22.3334 12 22.3334Z"
+                        stroke="black"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M16 8.33337H10C9.46957 8.33337 8.96086 8.54409 8.58579 8.91916C8.21071 9.29423 8 9.80294 8 10.3334C8 10.8638 8.21071 11.3725 8.58579 11.7476C8.96086 12.1227 9.46957 12.3334 10 12.3334H14C14.5304 12.3334 15.0391 12.5441 15.4142 12.9192C15.7893 13.2942 16 13.8029 16 14.3334C16 14.8638 15.7893 15.3725 15.4142 15.7476C15.0391 16.1227 14.5304 16.3334 14 16.3334H8"
+                        stroke="black"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M12 18.3334V6.33337"
+                        stroke="black"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <p class="h6">$12/hour</p>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="25"
+                      viewBox="0 0 24 25"
+                      fill="none"
+                    >
+                      <path
+                        d="M19 3.33337H5C3.89543 3.33337 3 4.2288 3 5.33337V19.3334C3 20.4379 3.89543 21.3334 5 21.3334H19C20.1046 21.3334 21 20.4379 21 19.3334V5.33337C21 4.2288 20.1046 3.33337 19 3.33337Z"
+                        stroke="black"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M15 9.33337L9 15.3334"
+                        stroke="black"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M9 9.33337H9.01"
+                        stroke="black"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M15 15.3334H15.01"
+                        stroke="black"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <p class="h6">10% off (for Student)</p>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="25"
+                      viewBox="0 0 24 25"
+                      fill="none"
+                    >
+                      <path
+                        d="M18 21.3334C18 19.2116 17.1571 17.1768 15.6569 15.6765C14.1566 14.1762 12.1217 13.3334 10 13.3334C7.87827 13.3334 5.84344 14.1762 4.34315 15.6765C2.84285 17.1768 2 19.2116 2 21.3334"
+                        stroke="black"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M10 13.3334C12.7614 13.3334 15 11.0948 15 8.33337C15 5.57195 12.7614 3.33337 10 3.33337C7.23858 3.33337 5 5.57195 5 8.33337C5 11.0948 7.23858 13.3334 10 13.3334Z"
+                        stroke="black"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M21.9998 20.3333C21.9998 16.9633 19.9998 13.8333 17.9998 12.3333C18.6572 11.8401 19.1829 11.1924 19.5304 10.4476C19.8778 9.70278 20.0363 8.88379 19.9918 8.06313C19.9473 7.24246 19.7012 6.44541 19.2753 5.74252C18.8493 5.03964 18.2567 4.45259 17.5498 4.03333"
+                        stroke="black"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <p class="h6">max. 6 people</p>
+                  </div>
+                </div>
+              </div>
+              <button class="btn-primary md:w-fit justify-center">
+                <p class="h6">Reserve Now</p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                >
+                  <path
+                    d="M6 12L10 8L6 4"
+                    stroke="white"
+                    stroke-width="1.33333"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="flex flex-col min-h-full justify-between gap-5">
+              <div class="flex flex-col gap-5">
+                <img
+                  src="../public/home/seat-3.webp"
+                  alt="Deal 1"
+                  class="w-full aspect-square object-cover"
+                />
+                <div class="flex flex-col gap-2 md:gap-3">
+                  <p class="h4">Private Table</p>
+                  <p class="opacity-60">
+                    Perfect for private meetings, presentations, or workshop sessions
+                  </p>
+                </div>
+
+                <div class="flex flex-col gap-3">
+                  <div class="flex items-center gap-3">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="25"
+                      viewBox="0 0 24 25"
+                      fill="none"
+                    >
+                      <path
+                        d="M12 22.3334C17.5228 22.3334 22 17.8562 22 12.3334C22 6.81053 17.5228 2.33337 12 2.33337C6.47715 2.33337 2 6.81053 2 12.3334C2 17.8562 6.47715 22.3334 12 22.3334Z"
+                        stroke="black"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M16 8.33337H10C9.46957 8.33337 8.96086 8.54409 8.58579 8.91916C8.21071 9.29423 8 9.80294 8 10.3334C8 10.8638 8.21071 11.3725 8.58579 11.7476C8.96086 12.1227 9.46957 12.3334 10 12.3334H14C14.5304 12.3334 15.0391 12.5441 15.4142 12.9192C15.7893 13.2942 16 13.8029 16 14.3334C16 14.8638 15.7893 15.3725 15.4142 15.7476C15.0391 16.1227 14.5304 16.3334 14 16.3334H8"
+                        stroke="black"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M12 18.3334V6.33337"
+                        stroke="black"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <p class="h6">$22/hour</p>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="25"
+                      viewBox="0 0 24 25"
+                      fill="none"
+                    >
+                      <path
+                        d="M19 3.33337H5C3.89543 3.33337 3 4.2288 3 5.33337V19.3334C3 20.4379 3.89543 21.3334 5 21.3334H19C20.1046 21.3334 21 20.4379 21 19.3334V5.33337C21 4.2288 20.1046 3.33337 19 3.33337Z"
+                        stroke="black"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M15 9.33337L9 15.3334"
+                        stroke="black"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M9 9.33337H9.01"
+                        stroke="black"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M15 15.3334H15.01"
+                        stroke="black"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <p class="h6">10% off (for Student)</p>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="25"
+                      viewBox="0 0 24 25"
+                      fill="none"
+                    >
+                      <path
+                        d="M18 21.3334C18 19.2116 17.1571 17.1768 15.6569 15.6765C14.1566 14.1762 12.1217 13.3334 10 13.3334C7.87827 13.3334 5.84344 14.1762 4.34315 15.6765C2.84285 17.1768 2 19.2116 2 21.3334"
+                        stroke="black"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M10 13.3334C12.7614 13.3334 15 11.0948 15 8.33337C15 5.57195 12.7614 3.33337 10 3.33337C7.23858 3.33337 5 5.57195 5 8.33337C5 11.0948 7.23858 13.3334 10 13.3334Z"
+                        stroke="black"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M21.9998 20.3333C21.9998 16.9633 19.9998 13.8333 17.9998 12.3333C18.6572 11.8401 19.1829 11.1924 19.5304 10.4476C19.8778 9.70278 20.0363 8.88379 19.9918 8.06313C19.9473 7.24246 19.7012 6.44541 19.2753 5.74252C18.8493 5.03964 18.2567 4.45259 17.5498 4.03333"
+                        stroke="black"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <p class="h6">max. 12 people</p>
+                  </div>
+                </div>
+              </div>
+              <button class="btn-primary md:w-fit justify-center">
+                <p class="h6">Reserve Now</p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                >
+                  <path
+                    d="M6 12L10 8L6 4"
+                    stroke="white"
+                    stroke-width="1.33333"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+       <section style="background-color: var(--brand-2-700);" class="w-screen flex flex-col items-center px-6 md:px-20 pt-12 md:pt-24 pb-3 md:pb-9 gap-12 text-white">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12">
+            <img src="../public/footer/footer.png" alt="Footer" class="col-span-1 md:col-span-7 h-full object-cover w-full">
+            <div class="min-h-full flex flex-col gap-6 md:gap-12 justify-between col-span-1 md:col-span-5">
+                <div class="flex flex-col gap-6 md:gap-12">
+                    <h3 class="h2">Our Store</h3>
+                    <div class="flex flex-col gap-4 md:gap-6">
+                        <div class="flex gap-3 md:gap-3 items-center">
+                            <img src="../public/icon/location.svg" alt="Location" class="w-6 h-6">
+                            <p class="h6">123 Study Street, Singapore 123456 <span class="p">(5-min walk from Kent Ridge MRT)</span></p>
+                        </div>
+                        <div class="flex gap-3 md:gap-3 items-center">
+                            <img src="../public/icon/clock.svg" alt="Location" class="w-6 h-6">
+                            <p class="h6">8am - 11pm (Open Daily)</span></p>
+                        </div>
+                        <div class="flex gap-3 md:gap-3 items-center">
+                            <img src="../public/icon/phone.svg" alt="Phone" class="w-6 h-6">
+                            <p class="h6">+65 1234 5678</p>
+                        </div>
+                        <div class="flex gap-3 md:gap-3 items-center">
+                            <img src="../public/icon/mail.svg" alt="Email" class="w-6 h-6">
+                            <p class="h6">info@thenook.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex gap-2 md:gap-4">
+                    <button class="btn-secondary">
+                      <p class="h6">Contact Us</p>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                      >
+                        <path
+                          d="M6 12L10 8L6 4"
+                          stroke="black"
+                          stroke-width="1.33333"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                    <button class="btn-tertiary">
+                      <p class="h6">Locate Us</p>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                      >
+                        <path
+                          d="M6 12L10 8L6 4"
+                          stroke="white"
+                          stroke-width="1.33333"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+            </div>
+        </div>
+        <hr class="border-white/10 w-full">
+        <img src="../public/logo/with-text-white.svg" alt="Logo" class="w-auto h-24">
+        <div class="flex items-center gap-9 md:gap-12">
+            <a class="h5" href="">Home</a>
+            <a class="h5" href="">Menu</a>
+            <a class="h5" href="">Contact</a>
+        </div>
+        <p class="opacity-60">© 2025 The Nook. All rights reserved.</p>
+       </section>
     </main>
   </body>
 </html>
