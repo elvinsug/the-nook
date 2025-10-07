@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Nook – Singapore's Best Study Café</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="global.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <main class="flex flex-col overflow-x-hidden">
+      <!-- Hero Section -->
+      <section
+        style="
+          background: linear-gradient(
+              180deg,
+              rgba(60, 44, 37, 0) 50%,
+              rgba(60, 44, 37, 0.45) 100%
+            ),
+            url(../public/home/hero.webp) lightgray 50% / cover no-repeat;
+        "
+        class="w-screen h-screen grid grid-cols-1 items-end justify-items-start md:grid-cols-2 p-6 md:p-20"
+      >
+        <div class="flex flex-col gap-4 md:gap-6 text-white">
+          <p class="display">Study All Day. <br />Pay Less Than Lunch.</p>
+          <p class="p md:text-lg">
+            From late-night cramming to thesis triumphs, find your focus in
+            Singapore's favorite study café.
+          </p>
+          <div class="flex gap-2 md:gap-4">
+            <button class="btn-secondary">
+              <p class="h6">Reserve Your Seat</p>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+              >
+                <path
+                  d="M6 12L10 8L6 4"
+                  stroke="black"
+                  stroke-width="1.33333"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            <button class="btn-tertiary">
+              <p class="h6">See Menu</p>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+              >
+                <path
+                  d="M6 12L10 8L6 4"
+                  stroke="white"
+                  stroke-width="1.33333"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Deals Section -->
+      <section class="w-screen">
+        <div class="flex flex-col px-6 md:px-20  md:py-24 gap-6 md:gap-12">
+          <!-- The Header -->
+          <div class="gap-3 md:gap-5 flex flex-col">
+            <div class="h6 px-4 py-3 border-black/10 border-[1px] w-fit">
+              This Week's Deals
+            </div>
+            <h3 class="h2">Save More, Study Better.</h3>
+            <p class="opacity-60">
+              Limited weekly deals. Reserve now, they sell out fast.
+            </p>
+          </div>
+
+          <!-- The Deals -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-9">
+            <div class="flex flex-col min-h-full justify-between gap-5">
+              <div class="flex flex-col gap-5">
+                <img
+                  src="../public/home/deal-1.webp"
+                  alt="Deal 1"
+                  class="w-full h-auto object-cover"
+                />
+                <div class="flex flex-col gap-2 md:gap-3">
+                  <p class="h4">
+                    $18 <span class="h6 opacity-20 line-through">$25</span>
+                  </p>
+                  <p class="h5">Focus Fuel Bundle</p>
+                  <p class="opacity-60">
+                    4-hour Solo Desk + 1 Coffee + 1 Pastry
+                  </p>
+                </div>
+              </div>
+              <button class="btn-primary md:w-fit justify-center">
+                <p class="h6">Reserve Now</p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                >
+                  <path
+                    d="M6 12L10 8L6 4"
+                    stroke="white"
+                    stroke-width="1.33333"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="flex flex-col min-h-full justify-between gap-5">
+              <div class="flex flex-col gap-5">
+                <img
+                  src="../public/home/deal-2.webp"
+                  alt="Deal 2"
+                  class="w-full h-auto object-cover"
+                />
+                <div class="flex flex-col gap-2 md:gap-3">
+                  <p class="h4">
+                    $25 <span class="h6 opacity-20 line-through">$31.25</span>
+                  </p>
+                  <p class="h5">Brain Food Bundle</p>
+                  <p class="opacity-60">
+                    4-hour Solo Desk + 1 Smoothie + 1 Sandwich
+                  </p>
+                </div>
+              </div>
+              <button class="btn-primary md:w-fit justify-center">
+                <p class="h6">Reserve Now</p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                >
+                  <path
+                    d="M6 12L10 8L6 4"
+                    stroke="white"
+                    stroke-width="1.33333"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="flex flex-col min-h-full justify-between gap-5">
+              <div class="flex flex-col gap-5">
+                <img
+                  src="../public/home/deal-3.webp"
+                  alt="Deal 3"
+                  class="w-full h-auto object-cover"
+                />
+                <div class="flex flex-col gap-2 md:gap-3">
+                  <p class="h4">
+                    $35 <span class="h6 opacity-20 line-through">$44</span>
+                  </p>
+                  <p class="h5">Power Bundle</p>
+                  <p class="opacity-60">
+                    8-hour Solo Desk + 1 Coffee + 1 Pastry + 1 Sandwich + 1 Main
+                    Course
+                  </p>
+                </div>
+              </div>
+              <button class="btn-primary md:w-fit justify-center">
+                <p class="h6">Reserve Now</p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                >
+                  <path
+                    d="M6 12L10 8L6 4"
+                    stroke="white"
+                    stroke-width="1.33333"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
