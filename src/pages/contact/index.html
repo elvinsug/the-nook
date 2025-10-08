@@ -1,15 +1,299 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-scrollbar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - The Nook</title>
-    <link rel="stylesheet" href="../styles/output.css">
+    <title>Contact Us - The Nook</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../global.css">
+    <link rel="icon" type="image/x-icon" href="../../../public/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="no-scrollbar">
     <main class="flex flex-col">
-        <h1 class="text-primary-700 text-4xl font-bold">Contact Us</h1>
+        <div class="flex flex-col gap-4 w-full min-h-screen">
+            <!-- Navbar -->
+            <nav class="fixed left-4 right-4 top-4 z-50 bg-white">
+                <div class="flex items-center justify-between px-4 md:px-6 py-3 relative">
+                    <!-- Logo -->
+                    <a href="../../index.html" class="flex-shrink-0 px-2">
+                        <img src="../../../public/logo/with-text-dark.svg" alt="Logo" class="w-auto h-9 md:h-12 hidden md:block">
+                        <img src="../../../public/logo/icon-only-dark.svg" alt="Logo" class="w-auto h-full md:hidden">
+                    </a>
+                    
+                    <!-- Desktop Navigation -->
+                    <div class="hidden md:flex items-center gap-9 h6 absolute left-1/2 transform -translate-x-1/2">
+                        <a href="../../index.html" class="hover:opacity-60 transition-opacity">Home</a>
+                        <a href="../menu/index.html" class="hover:opacity-60 transition-opacity">Menu</a>
+                        <a href="../contact/index.html" class="hover:opacity-60 transition-opacity">Contact</a>
+                    </div>
+                    
+                    <!-- Right Side -->
+                    <div class="flex items-center gap-3 md:gap-4">
+                        <a href="../booking/index.html" class="btn-primary justify-center">
+                            <p class="h6">Reserve Now</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                              <path d="M6 12L10 8L6 4" stroke="white" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                        
+                        <!-- Mobile Menu Toggle -->
+                        <button class="md:hidden p-2" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
+                            <img src="../../../public/icon/menu.svg" alt="Menu" class="w-6 h-6">
+                        </button>
+                    </div>
+                    
+                    <!-- Mobile Menu Dropdown -->
+                    <div id="mobileMenu" class="hidden md:hidden absolute top-full left-0 right-0 border-t-black/10 border-t-[1px] bg-white p-6 shadow-sm">
+                        <div class="flex flex-col h4 gap-5">
+                            <a href="../../index.html" class="hover:opacity-60 transition-opacity">Home</a>
+                            <a href="../menu/index.html" class="hover:opacity-60 transition-opacity">Menu</a>
+                            <a href="../contact/index.html" class="hover:opacity-60 transition-opacity">Contact</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- The Content -->
+             <div class="flex mt-[112px] mx-4 mx-4 mb-12 px-6 md:px-20 flex-1">
+                <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                    <!-- Left: Contact Info -->
+                    <div class="flex flex-col gap-6 md:gap-8">
+                        <!-- Image -->
+                        <div class="w-full h-64 md:h-80 lg:h-auto lg:flex-1">
+                            <img src="../../../public/footer/footer.png" alt="The Nook Store" class="w-full h-full object-cover">
+                        </div>
+
+                        <!-- Contact Details -->
+                        <div class="grid grid-cols-2 gap-4 md:gap-5">
+                            <!-- Address -->
+                            <div class="flex flex-col gap-1">
+                                <p class="h6">Address</p>
+                                <p class="opacity-60">123 Study Street, Singapore 123456</p>
+                            </div>
+
+                            <!-- Opening Hours -->
+                            <div class="flex flex-col gap-1">
+                                <p class="h6">Opening Hours</p>
+                                <p class="opacity-60">8:00 AM - 11:00 PM</p>
+                            </div>
+
+                            <!-- Phone -->
+                            <div class="flex flex-col gap-1">
+                                <p class="h6">Phone</p>
+                                <a href="tel:+6512345678" class="opacity-60 hover:opacity-100 transition-opacity">+65 1234 5678</a>
+                            </div>
+                            
+                            <!-- Email -->
+                            <div class="flex flex-col gap-1">
+                                <p class="h6">Email</p>
+                                <a href="mailto:info@thenook.com" class="opacity-60 hover:opacity-100 transition-opacity">info@thenook.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Contact Form -->
+                <div class="flex flex-col gap-6 md:gap-8">
+                    <div class="flex flex-col gap-3 md:gap-4">
+                        <h1 class="h1">Get In Touch</h1>
+                        <p class="opacity-60">Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+                    </div>
+
+                    <form class="flex flex-col gap-5 md:gap-6" id="contactForm">
+                        <!-- Name Input -->
+                        <div class="flex flex-col gap-2">
+                            <label for="name" class="h6 text-sm md:text-base">Name <span class="text-red-600">*</span></label>
+                            <input 
+                                type="text" 
+                                id="name" 
+                                name="name" 
+                                required
+                                placeholder="Your full name"
+                                class="p-3 md:p-4 border border-neutral-200 rounded-none focus:outline-none focus:border-brand-2-700 focus:ring-2 focus:ring-brand-2-700/20 transition-all"
+                            >
+                        </div>
+
+                        <!-- Email Input -->
+                        <div class="flex flex-col gap-2">
+                            <label for="email" class="h6 text-sm md:text-base">Email <span class="text-red-600">*</span></label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                required
+                                placeholder="your.email@example.com"
+                                class="p-3 md:p-4 border border-neutral-200 rounded-none focus:outline-none focus:border-brand-2-700 focus:ring-2 focus:ring-brand-2-700/20 transition-all"
+                            >
+                        </div>
+
+                        <!-- Student/Non-Student Selection -->
+                        <div class="flex flex-col gap-2">
+                            <label for="userType" class="h6 text-sm md:text-base">I am a <span class="text-red-600">*</span></label>
+                            <select 
+                                id="userType" 
+                                name="userType" 
+                                required
+                                class="p-3 md:p-4 border border-neutral-200 rounded-none focus:outline-none focus:border-brand-2-700 focus:ring-2 focus:ring-brand-2-700/20 transition-all cursor-pointer"
+                            >
+                                <option value="">Select an option</option>
+                                <option value="student">Student</option>
+                                <option value="non-student">Non-Student</option>
+                            </select>
+                        </div>
+
+                        <!-- Message Textarea -->
+                        <div class="flex flex-col gap-2">
+                            <label for="message" class="h6 text-sm md:text-base">Message <span class="text-red-600">*</span></label>
+                            <textarea 
+                                id="message" 
+                                name="message" 
+                                required
+                                rows="3"
+                                placeholder="Tell us what's on your mind..."
+                                class="p-3 md:p-4 border border-neutral-200 rounded-none focus:outline-none focus:border-brand-2-700 focus:ring-2 focus:ring-brand-2-700/20 transition-all resize-none"
+                            ></textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn-primary justify-center w-full md:w-fit">
+                            <p class="h6">Send Message</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M14.6667 1.33337L7.33337 8.66671" stroke="white" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M14.6667 1.33337L10 14.6667L7.33337 8.66671L1.33337 6.00004L14.6667 1.33337Z" stroke="white" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+
+                </div>
+             </div>
+
+        </div>
+            
+            <!-- The Footer -->
+            <section style="background-color: var(--brand-2-700);" class="w-screen flex flex-col items-center px-6 md:px-20 pt-12 md:pt-24 pb-3 md:pb-9 gap-12 text-white">
+               <!-- <div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12">
+                   <img src="../../../public/footer/footer.png" alt="Footer" class="col-span-1 md:col-span-7 h-full object-cover w-full">
+                   <div class="min-h-full flex flex-col gap-6 md:gap-12 justify-between col-span-1 md:col-span-5">
+                       <div class="flex flex-col gap-6 md:gap-12">
+                           <h3 class="h2">Our Store</h3>
+                           <div class="flex flex-col gap-4 md:gap-6">
+                               <div class="flex gap-3 md:gap-3 items-center">
+                                   <img src="../../../public/icon/location.svg" alt="Location" class="w-6 h-6">
+                                   <p class="h6">123 Study Street, Singapore 123456 <span class="p">(5-min walk from Kent Ridge MRT)</span></p>
+                               </div>
+                               <div class="flex gap-3 md:gap-3 items-center">
+                                   <img src="../../../public/icon/clock.svg" alt="Location" class="w-6 h-6">
+                                   <p class="h6">8am - 11pm (Open Daily)</span></p>
+                               </div>
+                               <div class="flex gap-3 md:gap-3 items-center">
+                                   <img src="../../../public/icon/phone.svg" alt="Phone" class="w-6 h-6">
+                                   <p class="h6">+65 1234 5678</p>
+                               </div>
+                               <div class="flex gap-3 md:gap-3 items-center">
+                                   <img src="../../../public/icon/mail.svg" alt="Email" class="w-6 h-6">
+                                   <p class="h6">info@thenook.com</p>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="flex gap-2 md:gap-4">
+                           <button class="btn-secondary">
+                             <p class="h6">Contact Us</p>
+                             <svg
+                               xmlns="http://www.w3.org/2000/svg"
+                               width="16"
+                               height="16"
+                               viewBox="0 0 16 16"
+                               fill="none"
+                             >
+                               <path
+                                 d="M6 12L10 8L6 4"
+                                 stroke="black"
+                                 stroke-width="1.33333"
+                                 stroke-linecap="round"
+                                 stroke-linejoin="round"
+                               />
+                             </svg>
+                           </button>
+                           <button class="btn-tertiary">
+                             <p class="h6">Locate Us</p>
+                             <svg
+                               xmlns="http://www.w3.org/2000/svg"
+                               width="16"
+                               height="16"
+                               viewBox="0 0 16 16"
+                               fill="none"
+                             >
+                               <path
+                                 d="M6 12L10 8L6 4"
+                                 stroke="white"
+                                 stroke-width="1.33333"
+                                 stroke-linecap="round"
+                                 stroke-linejoin="round"
+                               />
+                             </svg>
+                           </button>
+                         </div>
+                   </div>
+               </div>
+               <hr class="border-white/10 w-full"> -->
+               <a href="../../index.html">
+                   <img src="../../../public/logo/with-text-white.svg" alt="Logo" class="w-auto h-24">
+               </a>
+               <div class="flex items-center gap-9 md:gap-12">
+                   <a class="h5" href="">Home</a>
+                   <a class="h5" href="">Menu</a>
+                   <a class="h5" href="">Contact</a>
+               </div>
+               <p class="opacity-60">© 2025 The Nook. All rights reserved.</p>
+              </section>
+
+        
     </main>
+
+    <!-- Success Message (Hidden by default) -->
+    <div id="successMessage" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
+        <div class="bg-white p-8 md:p-10 max-w-md w-full shadow-xl">
+            <div class="flex flex-col items-center gap-4 text-center">
+                <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none">
+                        <path d="M20 6L9 17L4 12" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h3 class="h3">Message Sent!</h3>
+                <p class="opacity-60">Thank you for reaching out. We'll get back to you as soon as possible.</p>
+                <button onclick="closeSuccessMessage()" class="btn-primary justify-center w-full mt-2">
+                    <p class="h6">Close</p>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Form submission handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success message
+            document.getElementById('successMessage').classList.remove('hidden');
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Close success message
+        function closeSuccessMessage() {
+            document.getElementById('successMessage').classList.add('hidden');
+        }
+
+        // Close success message when clicking outside
+        document.getElementById('successMessage').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeSuccessMessage();
+            }
+        });
+    </script>
 </body>
 </html>
-
