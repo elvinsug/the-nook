@@ -1,15 +1,784 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu - The Nook</title>
-    <link rel="stylesheet" href="../styles/output.css">
-</head>
-<body>
+<html lang="en" class="no-scrollbar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Nook | Menu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../global.css" />
+    <link rel="icon" type="image/x-icon" href="../../../public/favicon.ico" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="no-scrollbar">
     <main class="flex flex-col">
-        <h1 class="text-brand-2-700 text-4xl font-bold">Our Menu</h1>
-    </main>
-</body>
-</html>
+      <!-- Navbar -->
+      <nav class="fixed left-4 right-4 top-4 z-50 bg-white">
+        <div
+          class="flex items-center justify-between px-4 md:px-6 py-3 relative"
+        >
+          <!-- Logo -->
+          <div class="flex-shrink-0 px-2">
+            <img
+              src="../../../public/logo/with-text-dark.svg"
+              alt="Logo"
+              class="w-auto h-9 md:h-12 hidden md:block"
+            />
+            <img
+              src="../../../public/logo/icon-only-dark.svg"
+              alt="Logo"
+              class="w-auto h-full md:hidden"
+            />
+          </div>
 
+          <!-- Desktop Navigation -->
+          <div
+            class="hidden md:flex items-center gap-9 h6 absolute left-1/2 transform -translate-x-1/2"
+          >
+            <a
+              href="../../index.html"
+              class="hover:opacity-60 transition-opacity"
+              >Home</a
+            >
+            <a
+              href="../menu/index.html"
+              class="hover:opacity-60 transition-opacity"
+              >Menu</a
+            >
+            <a
+              href="../contact/index.html"
+              class="hover:opacity-60 transition-opacity"
+              >Contact</a
+            >
+          </div>
+
+          <!-- Right Side -->
+          <div class="flex items-center gap-3 md:gap-4">
+            <a
+              href="../src/pages/booking/index.html"
+              class="btn-primary justify-center"
+            >
+              <p class="h6">Reserve Now</p>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+              >
+                <path
+                  d="M6 12L10 8L6 4"
+                  stroke="white"
+                  stroke-width="1.33333"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </a>
+
+            <!-- Mobile Menu Toggle -->
+            <button
+              class="md:hidden p-2"
+              onclick="document.getElementById('mobileMenu').classList.toggle('hidden')"
+            >
+              <img
+                src="../../../public/icon/menu.svg"
+                alt="Menu"
+                class="w-6 h-6"
+              />
+            </button>
+          </div>
+
+          <!-- Mobile Menu Dropdown -->
+          <div
+            id="mobileMenu"
+            class="hidden md:hidden absolute top-full left-0 right-0 border-t-black/10 border-t-[1px] bg-white p-6"
+          >
+            <div class="flex flex-col h4 gap-5">
+              <a
+                href="../../index.html"
+                class="hover:opacity-60 transition-opacity"
+                >Home</a
+              >
+              <a
+                href="../menu/index.html"
+                class="hover:opacity-60 transition-opacity"
+                >Menu</a
+              >
+              <a
+                href="../contact/index.html"
+                class="hover:opacity-60 transition-opacity"
+                >Contact</a
+              >
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Hero Section -->
+      <section
+        style="
+          background: linear-gradient(
+              180deg,
+              rgba(60, 44, 37, 0) 50%,
+              rgba(60, 44, 37, 0.45) 100%
+            ),
+            url(../../../public/menu/hero.png) lightgray 50% / cover no-repeat;
+        "
+        class="w-screen h-[calc(50vh)] md:h-[calc(65vh)] grid grid-cols-1 items-end justify-items-start md:grid-cols-2 p-6 md:p-20"
+      >
+        <div class="flex flex-col gap-4 md:gap-6 text-white">
+          <p class="display">Study Snacks That Slap.</p>
+          <p class="p md:text-lg">
+            Affordable bundles, caffeine that hits right, and meals made for
+            marathon study sessions.
+          </p>
+        </div>
+      </section>
+
+      <!-- Filter Chips -->
+      <section class="w-screen">
+        <div class="flex px-6 md:px-20 pt-12 md:pt-24">
+          <div class="flex gap-2 md:gap-3 flex-wrap">
+            <button
+              onclick="filterMenu('all')"
+              id="chip-all"
+              class="filter-chip active"
+            >
+              All
+            </button>
+            <button
+              onclick="filterMenu('promo')"
+              id="chip-promo"
+              class="filter-chip"
+            >
+              Promo
+            </button>
+            <button
+              onclick="filterMenu('beverages')"
+              id="chip-beverages"
+              class="filter-chip"
+            >
+              Beverages
+            </button>
+            <button
+              onclick="filterMenu('foods')"
+              id="chip-foods"
+              class="filter-chip"
+            >
+              Foods
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Deals Section -->
+      <section class="w-screen" id="section-promo">
+        <div class="flex flex-col px-6 md:px-20 py-12 md:py-24 gap-6 md:gap-12">
+          <!-- The Header -->
+          <div class="gap-3 md:gap-5 flex flex-col">
+            <div class="h6 px-4 py-3 border-black/10 border-[1px] w-fit">
+              This Week's Deals
+            </div>
+            <h3 class="h2">Save More, Study Better.</h3>
+            <p class="opacity-60">
+              Limited weekly deals. Reserve now, they sell out fast.
+            </p>
+          </div>
+
+          <!-- The Deals -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-9">
+            <div class="flex flex-col min-h-full justify-between gap-5">
+              <div class="flex flex-col gap-5">
+                <img
+                  src="../../../public/home/deal-1.webp"
+                  alt="Deal 1"
+                  class="w-full aspect-square object-cover"
+                />
+                <div class="flex flex-col gap-2 md:gap-3">
+                  <p class="h4">
+                    $18 <span class="h6 opacity-20 line-through">$25</span>
+                  </p>
+                  <p class="h5">Focus Fuel Bundle</p>
+                  <p class="opacity-60">
+                    4-hour Solo Desk + 1 Coffee + 1 Pastry
+                  </p>
+                </div>
+              </div>
+              <a
+                href="../../../src/pages/booking/deal.html?name=Focus%20Fuel%20Bundle&desc=4-hour%20Solo%20Desk%20%2B%201%20Coffee%20%2B%201%20Pastry&original=25&price=18&duration=4"
+                class="btn-primary md:w-fit justify-center"
+              >
+                <p class="h6">Reserve Now</p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                >
+                  <path
+                    d="M6 12L10 8L6 4"
+                    stroke="white"
+                    stroke-width="1.33333"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+            </div>
+            <div class="flex flex-col min-h-full justify-between gap-5">
+              <div class="flex flex-col gap-5">
+                <img
+                  src="../../../public/home/deal-2.webp"
+                  alt="Deal 2"
+                  class="w-full aspect-square object-cover"
+                />
+                <div class="flex flex-col gap-2 md:gap-3">
+                  <p class="h4">
+                    $25 <span class="h6 opacity-20 line-through">$31.25</span>
+                  </p>
+                  <p class="h5">Brain Food Bundle</p>
+                  <p class="opacity-60">
+                    4-hour Solo Desk + 1 Smoothie + 1 Sandwich
+                  </p>
+                </div>
+              </div>
+              <a
+                href="../../../src/pages/booking/deal.html?name=Brain%20Food%20Bundle&desc=4-hour%20Solo%20Desk%20%2B%201%20Smoothie%20%2B%201%20Sandwich&original=31.25&price=25&duration=4"
+                class="btn-primary md:w-fit justify-center"
+              >
+                <p class="h6">Reserve Now</p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                >
+                  <path
+                    d="M6 12L10 8L6 4"
+                    stroke="white"
+                    stroke-width="1.33333"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+            </div>
+            <div class="flex flex-col min-h-full justify-between gap-5">
+              <div class="flex flex-col gap-5">
+                <img
+                  src="../../../public/home/deal-3.webp"
+                  alt="Deal 3"
+                  class="w-full aspect-square object-cover"
+                />
+                <div class="flex flex-col gap-2 md:gap-3">
+                  <p class="h4">
+                    $35 <span class="h6 opacity-20 line-through">$44</span>
+                  </p>
+                  <p class="h5">Power Bundle</p>
+                  <p class="opacity-60">
+                    8-hour Solo Desk + 1 Coffee + 1 Pastry + 1 Sandwich + 1 Main
+                    Course
+                  </p>
+                </div>
+              </div>
+              <a
+                href="../../../src/pages/booking/deal.html?name=Power%20Bundle&desc=8-hour%20Solo%20Desk%20%2B%201%20Coffee%20%2B%201%20Pastry%20%2B%201%20Sandwich%20%2B%201%20Main%20Course&original=44&price=35&duration=8"
+                class="btn-primary md:w-fit justify-center"
+              >
+                <p class="h6">Reserve Now</p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                >
+                  <path
+                    d="M6 12L10 8L6 4"
+                    stroke="white"
+                    stroke-width="1.33333"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Beverages Section -->
+      <section class="w-screen" id="section-beverages">
+        <div class="flex flex-col px-6 md:px-20 py-12 md:py-24 gap-6 md:gap-12">
+          <!-- The Header -->
+          <h3 class="h2">Beverages</h3>
+
+          <!-- The Beverages Grid -->
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+            <!-- Lychee Oolong Tea -->
+            <div class="flex flex-col gap-3 md:gap-4 menu-item-card">
+              <img
+                src="../../../public/menu/drink/drink-1.png"
+                alt="Lychee Oolong Tea"
+                class="w-full aspect-square object-cover"
+              />
+              <div class="flex flex-col gap-1 md:gap-2">
+                <p class="h5 md:h4">$7</p>
+                <p class="h6 md:h5">Lychee Oolong Tea</p>
+                <p class="opacity-60 text-sm md:text-base">
+                  Oolong tea, lychee.
+                </p>
+              </div>
+            </div>
+
+            <!-- Honey Lemon Tea -->
+            <div class="flex flex-col gap-3 md:gap-4 menu-item-card">
+              <img
+                src="../../../public/menu/drink/drink-2.png"
+                alt="Honey Lemon Tea"
+                class="w-full aspect-square object-cover"
+              />
+              <div class="flex flex-col gap-1 md:gap-2">
+                <p class="h5 md:h4">$6</p>
+                <p class="h6 md:h5">Honey Lemon Tea</p>
+                <p class="opacity-60 text-sm md:text-base">
+                  Black tea, lemon, honey.
+                </p>
+              </div>
+            </div>
+
+            <!-- Classic Iced Tea -->
+            <div class="flex flex-col gap-3 md:gap-4 menu-item-card">
+              <img
+                src="../../../public/menu/drink/drink-3.png"
+                alt="Classic Iced Tea"
+                class="w-full aspect-square object-cover"
+              />
+              <div class="flex flex-col gap-1 md:gap-2">
+                <p class="h5 md:h4">$5</p>
+                <p class="h6 md:h5">Classic Iced Tea</p>
+                <p class="opacity-60 text-sm md:text-base">Black tea, ice.</p>
+              </div>
+            </div>
+
+            <!-- Green Focus -->
+            <div class="flex flex-col gap-3 md:gap-4 menu-item-card">
+              <img
+                src="../../../public/menu/drink/drink-4.png"
+                alt="Green Focus"
+                class="w-full aspect-square object-cover"
+              />
+              <div class="flex flex-col gap-1 md:gap-2">
+                <p class="h5 md:h4">$8</p>
+                <p class="h6 md:h5">Green Focus</p>
+                <p class="opacity-60 text-sm md:text-base">
+                  Spinach, green apple, kiwi, coconut water.
+                </p>
+              </div>
+            </div>
+
+            <!-- Tropical Booster -->
+            <div class="flex flex-col gap-3 md:gap-4 menu-item-card">
+              <img
+                src="../../../public/menu/drink/drink-5.png"
+                alt="Tropical Booster"
+                class="w-full aspect-square object-cover"
+              />
+              <div class="flex flex-col gap-1 md:gap-2">
+                <p class="h5 md:h4">$8</p>
+                <p class="h6 md:h5">Tropical Booster</p>
+                <p class="opacity-60 text-sm md:text-base">
+                  Pineapple, mango, banana, orange juice.
+                </p>
+              </div>
+            </div>
+
+            <!-- Brain Booster -->
+            <div class="flex flex-col gap-3 md:gap-4 menu-item-card">
+              <img
+                src="../../../public/menu/drink/drink-6.png"
+                alt="Brain Booster"
+                class="w-full aspect-square object-cover"
+              />
+              <div class="flex flex-col gap-1 md:gap-2">
+                <p class="h5 md:h4">$8</p>
+                <p class="h6 md:h5">Brain Booster</p>
+                <p class="opacity-60 text-sm md:text-base">
+                  Banana, blueberry, spinach, protein.
+                </p>
+              </div>
+            </div>
+
+            <!-- Matcha Latte -->
+            <div class="flex flex-col gap-3 md:gap-4 menu-item-card">
+              <img
+                src="../../../public/menu/drink/drink-7.png"
+                alt="Matcha Latte"
+                class="w-full aspect-square object-cover"
+              />
+              <div class="flex flex-col gap-1 md:gap-2">
+                <p class="h5 md:h4">$7</p>
+                <p class="h6 md:h5">Matcha Latte</p>
+                <p class="opacity-60 text-sm md:text-base">
+                  Japanese matcha, milk.
+                </p>
+              </div>
+            </div>
+
+            <!-- Iced Americano -->
+            <div class="flex flex-col gap-3 md:gap-4 menu-item-card">
+              <img
+                src="../../../public/menu/drink/drink-8.png"
+                alt="Iced Americano"
+                class="w-full aspect-square object-cover"
+              />
+              <div class="flex flex-col gap-1 md:gap-2">
+                <p class="h5 md:h4">$5</p>
+                <p class="h6 md:h5">Iced Americano</p>
+                <p class="opacity-60 text-sm md:text-base">Espresso, ice.</p>
+              </div>
+            </div>
+
+            <!-- Latte -->
+            <div class="flex flex-col gap-3 md:gap-4 menu-item-card">
+              <img
+                src="../../../public/menu/drink/drink-9.png"
+                alt="Latte"
+                class="w-full aspect-square object-cover"
+              />
+              <div class="flex flex-col gap-1 md:gap-2">
+                <p class="h5 md:h4">$6</p>
+                <p class="h6 md:h5">Latte</p>
+                <p class="opacity-60 text-sm md:text-base">
+                  Espresso, milk foam.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Food Section -->
+      <section class="w-screen" id="section-foods">
+        <div class="flex flex-col px-6 md:px-20 py-12 md:py-24 gap-6 md:gap-12">
+          <!-- The Header -->
+          <h3 class="h2">Food</h3>
+
+          <!-- The Food Grid -->
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+            <!-- Avocado Toast -->
+            <div class="flex flex-col gap-3 md:gap-4 menu-item-card">
+              <img
+                src="../../../public/menu/food/food-1.png"
+                alt="Avocado Toast"
+                class="w-full aspect-square object-cover"
+              />
+              <div class="flex flex-col gap-1 md:gap-2">
+                <p class="h5 md:h4">$8</p>
+                <p class="h6 md:h5">Avocado Toast</p>
+                <p class="opacity-60 text-sm md:text-base">
+                  Sourdough, avocado, poached egg, olive oil.
+                </p>
+              </div>
+            </div>
+
+            <!-- Chicken Sandwich -->
+            <div class="flex flex-col gap-3 md:gap-4 menu-item-card">
+              <img
+                src="../../../public/menu/food/food-2.png"
+                alt="Chicken Sandwich"
+                class="w-full aspect-square object-cover"
+              />
+              <div class="flex flex-col gap-1 md:gap-2">
+                <p class="h5 md:h4">$9</p>
+                <p class="h6 md:h5">Chicken Sandwich</p>
+                <p class="opacity-60 text-sm md:text-base">
+                  Grilled chicken, lettuce, tomato, honey-mustard, brioche.
+                </p>
+              </div>
+            </div>
+
+            <!-- Quinoa Salad -->
+            <div class="flex flex-col gap-3 md:gap-4 menu-item-card">
+              <img
+                src="../../../public/menu/food/food-3.png"
+                alt="Quinoa Salad"
+                class="w-full aspect-square object-cover"
+              />
+              <div class="flex flex-col gap-1 md:gap-2">
+                <p class="h5 md:h4">$8</p>
+                <p class="h6 md:h5">Quinoa Salad</p>
+                <p class="opacity-60 text-sm md:text-base">
+                  Quinoa, roasted pumpkin, feta, lemon dressing.
+                </p>
+              </div>
+            </div>
+
+            <!-- Pasta Bowl -->
+            <div class="flex flex-col gap-3 md:gap-4 menu-item-card">
+              <img
+                src="../../../public/menu/food/food-4.png"
+                alt="Pasta Bowl"
+                class="w-full aspect-square object-cover"
+              />
+              <div class="flex flex-col gap-1 md:gap-2">
+                <p class="h5 md:h4">$9</p>
+                <p class="h6 md:h5">Pasta Bowl</p>
+                <p class="opacity-60 text-sm md:text-base">
+                  Creamy mushroom pasta, parmesan, herbs.
+                </p>
+              </div>
+            </div>
+
+            <!-- Egg Sandwich -->
+            <div class="flex flex-col gap-3 md:gap-4 menu-item-card">
+              <img
+                src="../../../public/menu/food/food-5.png"
+                alt="Egg Sandwich"
+                class="w-full aspect-square object-cover"
+              />
+              <div class="flex flex-col gap-1 md:gap-2">
+                <p class="h5 md:h4">$7</p>
+                <p class="h6 md:h5">Egg Sandwich</p>
+                <p class="opacity-60 text-sm md:text-base">
+                  Scrambled eggs, cheddar, brioche.
+                </p>
+              </div>
+            </div>
+
+            <!-- Granola Bowl -->
+            <div class="flex flex-col gap-3 md:gap-4 menu-item-card">
+              <img
+                src="../../../public/menu/food/food-6.png"
+                alt="Granola Bowl"
+                class="w-full aspect-square object-cover"
+              />
+              <div class="flex flex-col gap-1 md:gap-2">
+                <p class="h5 md:h4">$7</p>
+                <p class="h6 md:h5">Granola Bowl</p>
+                <p class="opacity-60 text-sm md:text-base">
+                  Yogurt, granola, honey, berries.
+                </p>
+              </div>
+            </div>
+
+            <!-- Grilled Teriyaki Chicken Bowl -->
+            <div class="flex flex-col gap-3 md:gap-4 menu-item-card">
+              <img
+                src="../../../public/menu/food/food-7.png"
+                alt="Grilled Teriyaki Chicken Bowl"
+                class="w-full aspect-square object-cover"
+              />
+              <div class="flex flex-col gap-1 md:gap-2">
+                <p class="h5 md:h4">$9</p>
+                <p class="h6 md:h5">Grilled Teriyaki Chicken Bowl</p>
+                <p class="opacity-60 text-sm md:text-base">
+                  Grilled chicken, teriyaki sauce, rice, vegetables.
+                </p>
+              </div>
+            </div>
+
+            <!-- Salmon Grain Bowl -->
+            <div class="flex flex-col gap-3 md:gap-4 menu-item-card">
+              <img
+                src="../../../public/menu/food/food-8.png"
+                alt="Salmon Grain Bowl"
+                class="w-full aspect-square object-cover"
+              />
+              <div class="flex flex-col gap-1 md:gap-2">
+                <p class="h5 md:h4">$9</p>
+                <p class="h6 md:h5">Salmon Grain Bowl</p>
+                <p class="opacity-60 text-sm md:text-base">
+                  Pan-seared salmon, quinoa, brown rice, avocado, cherry
+                  tomatoes.
+                </p>
+              </div>
+            </div>
+
+            <!-- Chicken Chop with Rice -->
+            <div class="flex flex-col gap-3 md:gap-4 menu-item-card">
+              <img
+                src="../../../public/menu/food/food-9.png"
+                alt="Chicken Chop with Rice"
+                class="w-full aspect-square object-cover"
+              />
+              <div class="flex flex-col gap-1 md:gap-2">
+                <p class="h5 md:h4">$9</p>
+                <p class="h6 md:h5">Chicken Chop with Rice</p>
+                <p class="opacity-60 text-sm md:text-base">
+                  Grilled chicken chop, savory sauce, rice, vegetables.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+       <section style="background-color: var(--brand-2-700);" class="w-screen flex flex-col items-center px-6 md:px-20 pt-12 md:pt-24 pb-3 md:pb-9 gap-12 text-white">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12">
+            <img src="../../../public/footer/footer.png" alt="Footer" class="col-span-1 md:col-span-7 h-full object-cover w-full">
+            <div class="min-h-full flex flex-col gap-6 md:gap-12 justify-between col-span-1 md:col-span-5">
+                <div class="flex flex-col gap-6 md:gap-12">
+                    <h3 class="h2">Our Store</h3>
+                    <div class="flex flex-col gap-4 md:gap-6">
+                        <div class="flex gap-3 md:gap-3 items-center">
+                            <img src="../../../public/icon/location.svg" alt="Location" class="w-6 h-6">
+                            <p class="h6">123 Study Street, Singapore 123456 <span class="p">(5-min walk from Kent Ridge MRT)</span></p>
+                        </div>
+                        <div class="flex gap-3 md:gap-3 items-center">
+                            <img src="../../../public/icon/clock.svg" alt="Location" class="w-6 h-6">
+                            <p class="h6">8am - 11pm (Open Daily)</span></p>
+                        </div>
+                        <div class="flex gap-3 md:gap-3 items-center">
+                            <img src="../../../public/icon/phone.svg" alt="Phone" class="w-6 h-6">
+                            <p class="h6">+65 1234 5678</p>
+                        </div>
+                        <div class="flex gap-3 md:gap-3 items-center">
+                            <img src="../../../public/icon/mail.svg" alt="Email" class="w-6 h-6">
+                            <p class="h6">info@thenook.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex gap-2 md:gap-4">
+                    <button class="btn-secondary">
+                      <p class="h6">Contact Us</p>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                      >
+                        <path
+                          d="M6 12L10 8L6 4"
+                          stroke="black"
+                          stroke-width="1.33333"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                    <button class="btn-tertiary">
+                      <p class="h6">Locate Us</p>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                      >
+                        <path
+                          d="M6 12L10 8L6 4"
+                          stroke="white"
+                          stroke-width="1.33333"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+            </div>
+        </div>
+        <hr class="border-white/10 w-full">
+        <img src="../../../public/logo/with-text-white.svg" alt="Logo" class="w-auto h-24">
+        <div class="flex items-center gap-9 md:gap-12">
+            <a class="h5" href="">Home</a>
+            <a class="h5" href="">Menu</a>
+            <a class="h5" href="">Contact</a>
+        </div>
+        <p class="opacity-60">© 2025 The Nook. All rights reserved.</p>
+       </section>
+    </main>
+
+    <style>
+      .filter-chip {
+        padding: 12px 24px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        background-color: white;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border-radius: 0;
+      }
+
+      .filter-chip:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+      }
+
+      .filter-chip.active {
+        background-color: black;
+        color: white;
+        border-color: black;
+      }
+
+      @media (min-width: 768px) {
+        .filter-chip {
+          padding: 14px 28px;
+          font-size: 16px;
+        }
+      }
+
+      .section-hidden {
+        display: none;
+      }
+
+      /* Menu Item Cards */
+      .menu-item-card {
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .menu-item-card:hover {
+        opacity: 0.8;
+      }
+
+      .menu-item-card:active {
+        transform: scale(0.98);
+      }
+    </style>
+
+    <script>
+      function filterMenu(category) {
+        // Remove active class from all chips
+        document.querySelectorAll(".filter-chip").forEach((chip) => {
+          chip.classList.remove("active");
+        });
+
+        // Add active class to clicked chip
+        document.getElementById("chip-" + category).classList.add("active");
+
+        // Show/hide sections based on category
+        const sections = {
+          promo: document.getElementById("section-promo"),
+          beverages: document.getElementById("section-beverages"),
+          foods: document.getElementById("section-foods"),
+        };
+
+        if (category === "all") {
+          // Show all sections
+          Object.values(sections).forEach((section) => {
+            section.classList.remove("section-hidden");
+          });
+        } else {
+          // Hide all sections except the selected one
+          Object.entries(sections).forEach(([key, section]) => {
+            if (key === category) {
+              section.classList.remove("section-hidden");
+            } else {
+              section.classList.add("section-hidden");
+            }
+          });
+        }
+      }
+    </script>
+  </body>
+</html>
