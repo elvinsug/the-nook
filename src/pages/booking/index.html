@@ -1,15 +1,1252 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Booking - The Nook</title>
-    <link rel="stylesheet" href="../styles/output.css">
-</head>
-<body>
-    <main class="flex flex-col">
-        <h1 class="text-brand-1-700 text-4xl font-bold">Book Your Spot</h1>
-    </main>
-</body>
-</html>
+<html lang="en" class="no-scrollbar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Nook | Book Your Seat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../global.css" />
+    <link rel="icon" type="image/x-icon" href="../../../public/favicon.ico" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <main class="flex flex-col min-h-screen w-screen bg-neutral-100 p-4 gap-4">
+      <!-- Navbar -->
+      <nav class="bg-white sticky">
+        <div class="flex items-center justify-between px-4 md:px-6 py-3 relative">
+            <!-- Logo -->
+            <div class="flex-shrink-0 px-2">
+                <img src="../../../public/logo/with-text-dark.svg" alt="Logo" class="w-auto h-9 md:h-12 hidden md:block">
+                <img src="../../../public/logo/icon-only-dark.svg" alt="Logo" class="w-auto h-full md:hidden">
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center gap-9 h6 absolute left-1/2 transform -translate-x-1/2">
+                <a href="../../index.html" class="hover:opacity-60 transition-opacity">Home</a>
+                <a href="../menu/index.html" class="hover:opacity-60 transition-opacity">Menu</a>
+                <a href="./../contact/index.html" class="hover:opacity-60 transition-opacity">Contact</a>
+            </div>
+            
+            <!-- Right Side -->
+            <div class="flex items-center gap-3 md:gap-4">
+                <a href="../src/pages/booking/index.html" class="btn-primary justify-center">
+                    <p class="h6">Reserve Now</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M6 12L10 8L6 4" stroke="white" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="md:hidden p-2" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
+                    <img src="../../../public/icon/menu.svg" alt="Menu" class="w-6 h-6 ">
+                </button>
+            </div>
+            
+            <!-- Mobile Menu Dropdown -->
+            <div id="mobileMenu" class="hidden md:hidden absolute top-full left-0 right-0 border-t-black/10 border-t-[1px] bg-white p-6 shadow-sm">
+                <div class="flex flex-col h4 gap-5">
+                    <a href="../../index.html" class=" hover:opacity-60 transition-opacity">Home</a>
+                    <a href="../menu/index.html" class=" hover:opacity-60 transition-opacity">Menu</a>
+                    <a href="../contact/index.html" class=" hover:opacity-60 transition-opacity">Contact</a>
+                </div>
+            </div>
+        </div>
+     </nav>
 
+     <!-- The Body Content -->
+      <div class="flex w-full flex-1 bg-white flex-col py-6 md:py-12 items-center px-6 md:px-20 gap-9 md:gap-16">
+        <!-- Progress Indicator -->
+         <div id="progressIndicator" class="flex items-center justify-center gap-4 w-2/3">
+            <div id="step1Indicator" style="background-color: var(--brand-2-700);" class="flex items-center justify-center aspect-square w-9 bg-neutral-300 text-white rounded-full h6">
+                <span class="step-number">1</span>
+                <svg class="step-check hidden" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M13.3333 4L6 11.3333L2.66667 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <hr id="line1to2" class="flex-1 border-neutral-300 border-[1px] transition-colors">
+            <div id="step2Indicator" class="flex items-center justify-center aspect-square w-9 bg-neutral-300 text-white rounded-full h6">
+                <span class="step-number">2</span>
+                <svg class="step-check hidden" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M13.3333 4L6 11.3333L2.66667 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <hr id="line2to3" class="flex-1 border-neutral-300 border-[1px] transition-colors">
+            <div id="step3Indicator" class="flex items-center justify-center aspect-square w-9 bg-neutral-300 text-white rounded-full h6">
+                <span class="step-number">3</span>
+                <svg class="step-check hidden" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M13.3333 4L6 11.3333L2.66667 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+         </div>
+
+         <!-- Step 1 Content -->
+         <div id="step1" class="step-content flex flex-col items-center gap-9 md:gap-12 w-full">
+            <div class="gap-3 md:gap-5 flex flex-col items-center">
+                <h1 class="h2 text-center">Choose Date & Time</h1>
+                <p class="opacity-60">When would you like to study?</p>
+            </div>
+            <!-- Date and Time Picker -->
+            <div class="w-full flex flex-col lg:flex-row gap-6 items-start justify-center">
+                <!-- Calendar Section -->
+                <div class="calendar-container bg-white border border-neutral-200 rounded-xl shadow-sm p-6 w-full lg:w-auto">
+                    <!-- Calendar Header -->
+                    <div class="flex items-center justify-between mb-6">
+                        <button id="prevMonth" class="p-2 hover:bg-neutral-100 rounded-lg transition-colors">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <div class="flex gap-2 items-center">
+                            <select id="monthSelect" class="h6 px-3 py-2 border border-neutral-200 rounded-lg hover:border-neutral-300 focus:outline-none focus:border-brand-2-700 focus:ring-2 focus:ring-brand-2-700/20 cursor-pointer">
+                                <option value="0">January</option>
+                                <option value="1">February</option>
+                                <option value="2">March</option>
+                                <option value="3">April</option>
+                                <option value="4">May</option>
+                                <option value="5">June</option>
+                                <option value="6">July</option>
+                                <option value="7">August</option>
+                                <option value="8">September</option>
+                                <option value="9">October</option>
+                                <option value="10">November</option>
+                                <option value="11">December</option>
+                            </select>
+                            <select id="yearSelect" class="h6 px-3 py-2 border border-neutral-200 rounded-lg hover:border-neutral-300 focus:outline-none focus:border-brand-2-700 focus:ring-2 focus:ring-brand-2-700/20 cursor-pointer">
+                            </select>
+                        </div>
+                        <button id="nextMonth" class="p-2 hover:bg-neutral-100 rounded-lg transition-colors">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Calendar Grid -->
+                    <div class="calendar-grid">
+                        <!-- Weekday Headers -->
+                        <div class="grid grid-cols-7 gap-2 mb-2">
+                            <div class="text-center text-sm text-neutral-500 font-medium py-2">Su</div>
+                            <div class="text-center text-sm text-neutral-500 font-medium py-2">Mo</div>
+                            <div class="text-center text-sm text-neutral-500 font-medium py-2">Tu</div>
+                            <div class="text-center text-sm text-neutral-500 font-medium py-2">We</div>
+                            <div class="text-center text-sm text-neutral-500 font-medium py-2">Th</div>
+                            <div class="text-center text-sm text-neutral-500 font-medium py-2">Fr</div>
+                            <div class="text-center text-sm text-neutral-500 font-medium py-2">Sa</div>
+                        </div>
+                        <!-- Days Grid -->
+                        <div id="calendarDays" class="grid grid-cols-7 gap-2">
+                            <!-- Generated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Time Selection Section -->
+                <div class="flex flex-col gap-6 w-full lg:w-80">
+                    <!-- Selected Date Display -->
+                    <div class="bg-white border border-neutral-200 rounded-xl shadow-sm p-6">
+                        <h5 class="h5 mb-2">Selected Date</h5>
+                        <p id="selectedDateDisplay" class="text-brand-2-700 font-medium">Select a date</p>
+                    </div>
+
+                    <!-- Time Pickers -->
+                    <div class="bg-white border border-neutral-200 rounded-xl shadow-sm p-6 flex flex-col gap-5">
+                        <h5 class="h5">Select Time</h5>
+                        
+                        <!-- Start Time -->
+                        <div class="flex flex-col gap-2">
+                            <label for="startTime" class="text-sm font-medium text-neutral-700">Start Time</label>
+                            <select id="startTime" class="p-3 border border-neutral-200 rounded-lg hover:border-neutral-300 focus:outline-none focus:border-brand-2-700 focus:ring-2 focus:ring-brand-2-700/20 cursor-pointer">
+                                <option value="">Select start time</option>
+                            </select>
+                        </div>
+
+                        <!-- End Time -->
+                        <div class="flex flex-col gap-2">
+                            <label for="endTime" class="text-sm font-medium text-neutral-700">End Time</label>
+                            <select id="endTime" class="p-3 border border-neutral-200 rounded-lg hover:border-neutral-300 focus:outline-none focus:border-brand-2-700 focus:ring-2 focus:ring-brand-2-700/20 cursor-pointer">
+                                <option value="">Select end time</option>
+                            </select>
+                        </div>
+
+                        <!-- Summary -->
+                        <div id="timeSummary" class="hidden pt-4 border-t border-neutral-200">
+                            <p class="text-sm text-neutral-600">Duration: <span id="duration" class="font-medium text-brand-2-700"></span></p>
+                        </div>
+                    </div>
+
+                    <!-- Continue Button -->
+                    <button class="btn-primary justify-center w-full" id="step1ContinueBtn" disabled>
+                        <p class="h6">Continue</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M6 12L10 8L6 4" stroke="white" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+         </div>
+
+         <!-- Step 2 Content -->
+         <div id="step2" class="step-content hidden flex-col items-center gap-9 md:gap-12 w-full">
+            <div class="gap-3 md:gap-5 flex flex-col items-center">
+                <h1 class="h2 text-center">Choose Your Seat</h1>
+                <p class="opacity-60">Select the perfect spot for your study session</p>
+            </div>
+
+            <!-- Seat Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-9 w-full max-w-6xl">
+                <!-- Solo Desk -->
+                <div class="seat-card flex flex-col min-h-full justify-between gap-5 border-2 border-transparent rounded-xl p-5 cursor-pointer transition-all hover:border-neutral-300" data-seat-type="solo" data-price="4">
+                    <div class="flex flex-col gap-5">
+                        <img src="../../../public/home/seat-1.webp" alt="Solo Desk" class="w-full aspect-square object-cover rounded-lg" />
+                        <div class="flex flex-col gap-2 md:gap-3">
+                            <p class="h4">Solo Desk</p>
+                            <p class="opacity-60">Perfect for solo study sessions, deep focus work, or online classes</p>
+                        </div>
+
+                        <div class="flex flex-col gap-3">
+                            <div class="flex items-center gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                    <path d="M12 22.3334C17.5228 22.3334 22 17.8562 22 12.3334C22 6.81053 17.5228 2.33337 12 2.33337C6.47715 2.33337 2 6.81053 2 12.3334C2 17.8562 6.47715 22.3334 12 22.3334Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M16 8.33337H10C9.46957 8.33337 8.96086 8.54409 8.58579 8.91916C8.21071 9.29423 8 9.80294 8 10.3334C8 10.8638 8.21071 11.3725 8.58579 11.7476C8.96086 12.1227 9.46957 12.3334 10 12.3334H14C14.5304 12.3334 15.0391 12.5441 15.4142 12.9192C15.7893 13.2942 16 13.8029 16 14.3334C16 14.8638 15.7893 15.3725 15.4142 15.7476C15.0391 16.1227 14.5304 16.3334 14 16.3334H8" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M12 18.3334V6.33337" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <p class="h6">$4/hour</p>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                    <path d="M19 3.33337H5C3.89543 3.33337 3 4.2288 3 5.33337V19.3334C3 20.4379 3.89543 21.3334 5 21.3334H19C20.1046 21.3334 21 20.4379 21 19.3334V5.33337C21 4.2288 20.1046 3.33337 19 3.33337Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M15 9.33337L9 15.3334" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M9 9.33337H9.01" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M15 15.3334H15.01" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <p class="h6">10% off (for Student)</p>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                    <path d="M18 21.3334C18 19.2116 17.1571 17.1768 15.6569 15.6765C14.1566 14.1762 12.1217 13.3334 10 13.3334C7.87827 13.3334 5.84344 14.1762 4.34315 15.6765C2.84285 17.1768 2 19.2116 2 21.3334" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M10 13.3334C12.7614 13.3334 15 11.0948 15 8.33337C15 5.57195 12.7614 3.33337 10 3.33337C7.23858 3.33337 5 5.57195 5 8.33337C5 11.0948 7.23858 13.3334 10 13.3334Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M21.9998 20.3333C21.9998 16.9633 19.9998 13.8333 17.9998 12.3333C18.6572 11.8401 19.1829 11.1924 19.5304 10.4476C19.8778 9.70278 20.0363 8.88379 19.9918 8.06313C19.9473 7.24246 19.7012 6.44541 19.2753 5.74252C18.8493 5.03964 18.2567 4.45259 17.5498 4.03333" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <p class="h6">max. 2 people</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Group Table -->
+                <div class="seat-card flex flex-col min-h-full justify-between gap-5 border-2 border-transparent rounded-xl p-5 cursor-pointer transition-all hover:border-neutral-300" data-seat-type="group" data-price="12">
+                    <div class="flex flex-col gap-5">
+                        <img src="../../../public/home/seat-2.webp" alt="Group Table" class="w-full aspect-square object-cover rounded-lg" />
+                        <div class="flex flex-col gap-2 md:gap-3">
+                            <p class="h4">Group Table</p>
+                            <p class="opacity-60">Perfect for study groups, discussion, and collaborative work</p>
+                        </div>
+
+                        <div class="flex flex-col gap-3">
+                            <div class="flex items-center gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                    <path d="M12 22.3334C17.5228 22.3334 22 17.8562 22 12.3334C22 6.81053 17.5228 2.33337 12 2.33337C6.47715 2.33337 2 6.81053 2 12.3334C2 17.8562 6.47715 22.3334 12 22.3334Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M16 8.33337H10C9.46957 8.33337 8.96086 8.54409 8.58579 8.91916C8.21071 9.29423 8 9.80294 8 10.3334C8 10.8638 8.21071 11.3725 8.58579 11.7476C8.96086 12.1227 9.46957 12.3334 10 12.3334H14C14.5304 12.3334 15.0391 12.5441 15.4142 12.9192C15.7893 13.2942 16 13.8029 16 14.3334C16 14.8638 15.7893 15.3725 15.4142 15.7476C15.0391 16.1227 14.5304 16.3334 14 16.3334H8" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M12 18.3334V6.33337" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <p class="h6">$12/hour</p>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                    <path d="M19 3.33337H5C3.89543 3.33337 3 4.2288 3 5.33337V19.3334C3 20.4379 3.89543 21.3334 5 21.3334H19C20.1046 21.3334 21 20.4379 21 19.3334V5.33337C21 4.2288 20.1046 3.33337 19 3.33337Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M15 9.33337L9 15.3334" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M9 9.33337H9.01" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M15 15.3334H15.01" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <p class="h6">10% off (for Student)</p>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                    <path d="M18 21.3334C18 19.2116 17.1571 17.1768 15.6569 15.6765C14.1566 14.1762 12.1217 13.3334 10 13.3334C7.87827 13.3334 5.84344 14.1762 4.34315 15.6765C2.84285 17.1768 2 19.2116 2 21.3334" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M10 13.3334C12.7614 13.3334 15 11.0948 15 8.33337C15 5.57195 12.7614 3.33337 10 3.33337C7.23858 3.33337 5 5.57195 5 8.33337C5 11.0948 7.23858 13.3334 10 13.3334Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M21.9998 20.3333C21.9998 16.9633 19.9998 13.8333 17.9998 12.3333C18.6572 11.8401 19.1829 11.1924 19.5304 10.4476C19.8778 9.70278 20.0363 8.88379 19.9918 8.06313C19.9473 7.24246 19.7012 6.44541 19.2753 5.74252C18.8493 5.03964 18.2567 4.45259 17.5498 4.03333" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <p class="h6">max. 6 people</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Private Table -->
+                <div class="seat-card flex flex-col min-h-full justify-between gap-5 border-2 border-transparent rounded-xl p-5 cursor-pointer transition-all hover:border-neutral-300" data-seat-type="private" data-price="22">
+                    <div class="flex flex-col gap-5">
+                        <img src="../../../public/home/seat-3.webp" alt="Private Table" class="w-full aspect-square object-cover rounded-lg" />
+                        <div class="flex flex-col gap-2 md:gap-3">
+                            <p class="h4">Private Table</p>
+                            <p class="opacity-60">Perfect for private meetings, presentations, or workshop sessions</p>
+                        </div>
+
+                        <div class="flex flex-col gap-3">
+                            <div class="flex items-center gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                    <path d="M12 22.3334C17.5228 22.3334 22 17.8562 22 12.3334C22 6.81053 17.5228 2.33337 12 2.33337C6.47715 2.33337 2 6.81053 2 12.3334C2 17.8562 6.47715 22.3334 12 22.3334Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M16 8.33337H10C9.46957 8.33337 8.96086 8.54409 8.58579 8.91916C8.21071 9.29423 8 9.80294 8 10.3334C8 10.8638 8.21071 11.3725 8.58579 11.7476C8.96086 12.1227 9.46957 12.3334 10 12.3334H14C14.5304 12.3334 15.0391 12.5441 15.4142 12.9192C15.7893 13.2942 16 13.8029 16 14.3334C16 14.8638 15.7893 15.3725 15.4142 15.7476C15.0391 16.1227 14.5304 16.3334 14 16.3334H8" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M12 18.3334V6.33337" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <p class="h6">$22/hour</p>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                    <path d="M19 3.33337H5C3.89543 3.33337 3 4.2288 3 5.33337V19.3334C3 20.4379 3.89543 21.3334 5 21.3334H19C20.1046 21.3334 21 20.4379 21 19.3334V5.33337C21 4.2288 20.1046 3.33337 19 3.33337Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M15 9.33337L9 15.3334" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M9 9.33337H9.01" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M15 15.3334H15.01" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <p class="h6">10% off (for Student)</p>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                    <path d="M18 21.3334C18 19.2116 17.1571 17.1768 15.6569 15.6765C14.1566 14.1762 12.1217 13.3334 10 13.3334C7.87827 13.3334 5.84344 14.1762 4.34315 15.6765C2.84285 17.1768 2 19.2116 2 21.3334" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M10 13.3334C12.7614 13.3334 15 11.0948 15 8.33337C15 5.57195 12.7614 3.33337 10 3.33337C7.23858 3.33337 5 5.57195 5 8.33337C5 11.0948 7.23858 13.3334 10 13.3334Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M21.9998 20.3333C21.9998 16.9633 19.9998 13.8333 17.9998 12.3333C18.6572 11.8401 19.1829 11.1924 19.5304 10.4476C19.8778 9.70278 20.0363 8.88379 19.9918 8.06313C19.9473 7.24246 19.7012 6.44541 19.2753 5.74252C18.8493 5.03964 18.2567 4.45259 17.5498 4.03333" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <p class="h6">max. 12 people</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="flex items-center gap-4 w-full max-w-6xl">
+                <button class="btn-secondary justify-center flex-1" id="step2BackBtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M10 12L6 8L10 4" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <p class="h6">Back</p>
+                </button>
+                <button class="btn-primary justify-center flex-1" id="step2ContinueBtn" disabled>
+                    <p class="h6">Continue</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M6 12L10 8L6 4" stroke="white" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+         </div>
+
+         <!-- Step 3 Content -->
+         <div id="step3" class="step-content hidden flex-col items-center gap-9 md:gap-12 w-full">
+            <div class="gap-3 md:gap-5 flex flex-col items-center">
+                <h1 class="h2 text-center">Complete Your Payment</h1>
+                <p class="opacity-60">Scan the QR code to pay and confirm your booking</p>
+            </div>
+
+            <!-- Payment Content -->
+            <div class="w-full max-w-4xl flex flex-col lg:flex-row gap-6">
+                <!-- QR Code Section -->
+                <div class="flex flex-col gap-6 w-full lg:w-1/2">
+                    <div class="bg-white border border-neutral-200 rounded-xl shadow-sm p-8 flex flex-col items-center gap-6">
+                        <h5 class="h5">Scan to Pay</h5>
+                        <div class="w-full aspect-square max-w-xs bg-neutral-100 rounded-xl overflow-hidden">
+                            <img src="../../../public/booking/qr.jpg" alt="Payment QR Code" class="w-full h-full object-contain" />
+                        </div>
+                        <div class="flex flex-col gap-2 text-center">
+                            <p class="text-sm opacity-60">Scan this QR code with your mobile banking app</p>
+                            <p class="text-sm font-medium text-brand-2-700">Payment expires in 15:00 minutes</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Summary Section -->
+                <div class="flex flex-col gap-6 w-full lg:w-1/2">
+                    <!-- Booking Details -->
+                    <div class="bg-white border border-neutral-200 rounded-xl shadow-sm p-6 flex flex-col gap-5">
+                        <h5 class="h5">Booking Details</h5>
+                        
+                        <div class="flex flex-col gap-4">
+                            <!-- Date -->
+                            <div class="flex items-start gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" class="mt-0.5">
+                                    <path d="M15.8333 3.33337H4.16667C3.24619 3.33337 2.5 4.07957 2.5 5.00004V16.6667C2.5 17.5872 3.24619 18.3334 4.16667 18.3334H15.8333C16.7538 18.3334 17.5 17.5872 17.5 16.6667V5.00004C17.5 4.07957 16.7538 3.33337 15.8333 3.33337Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M13.3333 1.66663V4.99996" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M6.66667 1.66663V4.99996" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M2.5 8.33337H17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <div class="flex flex-col gap-1">
+                                    <p class="text-sm font-medium">Date</p>
+                                    <p id="summaryDate" class="text-sm opacity-60">-</p>
+                                </div>
+                            </div>
+
+                            <!-- Time -->
+                            <div class="flex items-start gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" class="mt-0.5">
+                                    <path d="M10 18.3334C14.6024 18.3334 18.3333 14.6025 18.3333 10C18.3333 5.39765 14.6024 1.66671 10 1.66671C5.39763 1.66671 1.66669 5.39765 1.66669 10C1.66669 14.6025 5.39763 18.3334 10 18.3334Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M10 5V10L13.3333 11.6667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <div class="flex flex-col gap-1">
+                                    <p class="text-sm font-medium">Time</p>
+                                    <p id="summaryTime" class="text-sm opacity-60">-</p>
+                                </div>
+                            </div>
+
+                            <!-- Seat Type -->
+                            <div class="flex items-start gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" class="mt-0.5">
+                                    <path d="M16.6667 7.50004H3.33333C2.41286 7.50004 1.66667 8.24623 1.66667 9.16671V15C1.66667 15.9205 2.41286 16.6667 3.33333 16.6667H16.6667C17.5871 16.6667 18.3333 15.9205 18.3333 15V9.16671C18.3333 8.24623 17.5871 7.50004 16.6667 7.50004Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M5 7.5V4.16667C5 3.72464 5.17559 3.30072 5.48816 2.98816C5.80072 2.67559 6.22464 2.5 6.66667 2.5H13.3333C13.7754 2.5 14.1993 2.67559 14.5118 2.98816C14.8244 3.30072 15 3.72464 15 4.16667V7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <div class="flex flex-col gap-1">
+                                    <p class="text-sm font-medium">Seat Type</p>
+                                    <p id="summarySeat" class="text-sm opacity-60">-</p>
+                                </div>
+                            </div>
+
+                            <!-- Duration -->
+                            <div class="flex items-start gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" class="mt-0.5">
+                                    <path d="M10 5V10L13.3333 11.6667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M2.5 10H5.83333" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M14.1667 10H17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <div class="flex flex-col gap-1">
+                                    <p class="text-sm font-medium">Duration</p>
+                                    <p id="summaryDuration" class="text-sm opacity-60">-</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Price Breakdown -->
+                    <div class="bg-white border border-neutral-200 rounded-xl shadow-sm p-6 flex flex-col gap-5">
+                        <h5 class="h5">Price Breakdown</h5>
+                        
+                        <div class="flex flex-col gap-3">
+                            <!-- Base Price -->
+                            <div class="flex items-center justify-between">
+                                <p class="text-sm opacity-60">Base Rate</p>
+                                <p class="text-sm font-medium">$<span id="baseRate">0</span>/hour</p>
+                            </div>
+
+                            <!-- Duration -->
+                            <div class="flex items-center justify-between">
+                                <p class="text-sm opacity-60">Duration</p>
+                                <p class="text-sm font-medium"><span id="durationHours">0</span> hours</p>
+                            </div>
+
+                            <!-- Subtotal -->
+                            <div class="flex items-center justify-between">
+                                <p class="text-sm opacity-60">Subtotal</p>
+                                <p class="text-sm font-medium">$<span id="subtotal">0</span></p>
+                            </div>
+
+                            <!-- Student Discount -->
+                            <div class="flex items-center justify-between">
+                                <p class="text-sm opacity-60">Student Discount (10%)</p>
+                                <p class="text-sm font-medium text-green-600">-$<span id="discount">0</span></p>
+                            </div>
+
+                            <hr class="border-neutral-200">
+
+                            <!-- Total -->
+                            <div class="flex items-center justify-between">
+                                <p class="h6">Total</p>
+                                <p class="h4 text-brand-2-700">$<span id="totalPrice">0</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Buttons -->
+                    <div class="flex items-center gap-4 w-full">
+                        <button class="btn-secondary justify-center flex-1" id="step3BackBtn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M10 12L6 8L10 4" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <p class="h6">Back</p>
+                        </button>
+                        <button class="btn-primary justify-center flex-1" id="confirmPaymentBtn">
+                            <p class="h6">Pay</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+         </div>
+
+         <!-- Step 4 - Confirmation -->
+         <div id="step4" class="step-content hidden flex-col items-center gap-5 md:gap-6 w-full">
+            <div class="gap-2 flex flex-col items-center text-center max-w-2xl">
+                <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M20 6L9 17L4 12" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h1 class="h3 md:h2">Booking Confirmed!</h1>
+                <p class="text-sm opacity-60">Show this QR code to the cashier when you arrive.</p>
+            </div>
+
+            <!-- Confirmation Content -->
+            <div class="w-full max-w-5xl flex flex-col lg:flex-row gap-4 md:gap-5">
+                <!-- QR Code Card -->
+                <div class="bg-white border border-neutral-200 rounded-xl shadow-sm p-5 md:p-6 flex flex-col items-center gap-4 lg:w-2/5" id="qrCodeCard">
+                    <h5 class="h6 md:h5">Your Reservation</h5>
+                    
+                    <!-- Reservation ID -->
+                    <div class="flex flex-col items-center gap-1">
+                        <p class="text-xs opacity-60">Reservation ID</p>
+                        <p class="h5 text-brand-2-700 font-mono" id="reservationId">-</p>
+                    </div>
+
+                    <!-- QR Code -->
+                    <div class="w-full aspect-square max-w-[200px] lg:max-w-[180px] bg-neutral-100 rounded-lg overflow-hidden p-3">
+                        <div class="w-full h-full bg-white rounded-lg flex items-center justify-center">
+                            <div id="qrCodePlaceholder" class="text-6xl font-bold text-neutral-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" class="w-full h-full">
+                                    <rect x="10" y="10" width="80" height="80" fill="black"/>
+                                    <rect x="30" y="30" width="40" height="40" fill="white"/>
+                                    <rect x="110" y="10" width="80" height="80" fill="black"/>
+                                    <rect x="130" y="30" width="40" height="40" fill="white"/>
+                                    <rect x="10" y="110" width="80" height="80" fill="black"/>
+                                    <rect x="30" y="130" width="40" height="40" fill="white"/>
+                                    <rect x="110" y="110" width="30" height="30" fill="black"/>
+                                    <rect x="150" y="110" width="40" height="30" fill="black"/>
+                                    <rect x="110" y="150" width="40" height="40" fill="black"/>
+                                    <rect x="160" y="150" width="30" height="40" fill="black"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="text-xs text-center opacity-60">Show this QR code to the cashier</p>
+                </div>
+
+                <!-- Reservation Details & Actions -->
+                <div class="flex flex-col gap-4 md:gap-5 lg:w-3/5">
+                    <!-- Reservation Details -->
+                    <div class="bg-white border border-neutral-200 rounded-xl shadow-sm p-5 md:p-6 flex flex-col gap-4">
+                        <h5 class="h6 md:h5">Reservation Details</h5>
+                        
+                        <div class="flex flex-col gap-3">
+                            <!-- Date -->
+                            <div class="flex items-start gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" class="mt-0.5 flex-shrink-0">
+                                    <path d="M15.8333 3.33337H4.16667C3.24619 3.33337 2.5 4.07957 2.5 5.00004V16.6667C2.5 17.5872 3.24619 18.3334 4.16667 18.3334H15.8333C16.7538 18.3334 17.5 17.5872 17.5 16.6667V5.00004C17.5 4.07957 16.7538 3.33337 15.8333 3.33337Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M13.3333 1.66663V4.99996" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M6.66667 1.66663V4.99996" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M2.5 8.33337H17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <div class="flex flex-col gap-0.5">
+                                    <p class="text-xs font-medium">Date</p>
+                                    <p id="confirmDate" class="text-sm opacity-60">-</p>
+                                </div>
+                            </div>
+
+                            <!-- Time -->
+                            <div class="flex items-start gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" class="mt-0.5 flex-shrink-0">
+                                    <path d="M10 18.3334C14.6024 18.3334 18.3333 14.6025 18.3333 10C18.3333 5.39765 14.6024 1.66671 10 1.66671C5.39763 1.66671 1.66669 5.39765 1.66669 10C1.66669 14.6025 5.39763 18.3334 10 18.3334Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M10 5V10L13.3333 11.6667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <div class="flex flex-col gap-0.5">
+                                    <p class="text-xs font-medium">Time</p>
+                                    <p id="confirmTime" class="text-sm opacity-60">-</p>
+                                </div>
+                            </div>
+
+                            <!-- Seat Type -->
+                            <div class="flex items-start gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" class="mt-0.5 flex-shrink-0">
+                                    <path d="M16.6667 7.50004H3.33333C2.41286 7.50004 1.66667 8.24623 1.66667 9.16671V15C1.66667 15.9205 2.41286 16.6667 3.33333 16.6667H16.6667C17.5871 16.6667 18.3333 15.9205 18.3333 15V9.16671C18.3333 8.24623 17.5871 7.50004 16.6667 7.50004Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M5 7.5V4.16667C5 3.72464 5.17559 3.30072 5.48816 2.98816C5.80072 2.67559 6.22464 2.5 6.66667 2.5H13.3333C13.7754 2.5 14.1993 2.67559 14.5118 2.98816C14.8244 3.30072 15 3.72464 15 4.16667V7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <div class="flex flex-col gap-0.5">
+                                    <p class="text-xs font-medium">Seat Type</p>
+                                    <p id="confirmSeat" class="text-sm opacity-60">-</p>
+                                </div>
+                            </div>
+
+                            <!-- Duration -->
+                            <div class="flex items-start gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" class="mt-0.5 flex-shrink-0">
+                                    <path d="M10 5V10L13.3333 11.6667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M2.5 10H5.83333" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M14.1667 10H17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <div class="flex flex-col gap-0.5">
+                                    <p class="text-xs font-medium">Duration</p>
+                                    <p id="confirmDuration" class="text-sm opacity-60">-</p>
+                                </div>
+                            </div>
+
+                            <hr class="border-neutral-200 my-1">
+
+                            <!-- Total Amount -->
+                            <div class="flex items-center justify-between">
+                                <p class="h6">Total Amount Paid</p>
+                                <p class="h4 text-brand-2-700">$<span id="confirmTotal">0</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center gap-3 w-full">
+                        <button class="btn-secondary justify-center flex-1 w-full py-3 sm:py-2" id="saveImageBtn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M14 10V12.6667C14 13.0203 13.8595 13.3594 13.6095 13.6095C13.3594 13.8595 13.0203 14 12.6667 14H3.33333C2.97971 14 2.64057 13.8595 2.39052 13.6095C2.14048 13.3594 2 13.0203 2 12.6667V10" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M4.66669 6.66663L8.00002 9.99996L11.3334 6.66663" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M8 10V2" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <p class="h6">Save Image</p>
+                        </button>
+                        <a href="../../index.html" class="btn-primary justify-center flex-1 w-full py-3 sm:py-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M2 6L8 2L14 6V13.3333C14 13.687 13.8595 14.0261 13.6095 14.2761C13.3594 14.5262 13.0203 14.6667 12.6667 14.6667H3.33333C2.97971 14.6667 2.64057 14.5262 2.39052 14.2761C2.14048 14.0261 2 13.687 2 13.3333V6Z" stroke="white" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M6 14.6667V8H10V14.6667" stroke="white" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <p class="h6">Back to Home</p>
+                        </a>
+                    </div>
+
+                    <!-- Additional Info -->
+                    <div class="bg-beige-700 border border-brand-1-300 rounded-lg p-3 flex gap-2.5">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" class="mt-0.5 flex-shrink-0">
+                            <path d="M10 18.3334C14.6024 18.3334 18.3333 14.6025 18.3333 10C18.3333 5.39765 14.6024 1.66671 10 1.66671C5.39763 1.66671 1.66669 5.39765 1.66669 10C1.66669 14.6025 5.39763 18.3334 10 18.3334Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M10 13.3334V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M10 6.66663H10.0083" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <div class="flex flex-col gap-0.5">
+                            <p class="text-xs font-medium">Important</p>
+                            <p class="text-xs opacity-70">Please arrive 10 minutes before your reservation time and present this QR code at the cashier desk.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </div>
+
+      </div>
+
+
+
+    </main>
+
+    <style>
+        /* Calendar Styles */
+        .calendar-day {
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .calendar-day:not(.disabled):not(.outside):hover {
+            background-color: var(--beige-700);
+        }
+
+        .calendar-day.today {
+            border: 2px solid var(--brand-2-700);
+        }
+
+        .calendar-day.selected {
+            background-color: var(--brand-2-700);
+            color: white;
+        }
+
+        .calendar-day.selected:hover {
+            background-color: var(--brand-2-600);
+        }
+
+        .calendar-day.outside {
+            color: #d1d5db;
+        }
+
+        .calendar-day.disabled {
+            color: #d1d5db;
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+
+        #step1ContinueBtn:disabled,
+        #step2ContinueBtn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        #step1ContinueBtn:disabled:hover,
+        #step2ContinueBtn:disabled:hover {
+            transform: none;
+        }
+
+        /* Seat Card Styles */
+        .seat-card.selected {
+            border-color: var(--brand-2-700);
+            background-color: var(--beige-700);
+        }
+
+        /* Step Display */
+        .step-content {
+            display: none;
+        }
+
+        .step-content.active {
+            display: flex;
+        }
+
+        /* Progress Indicator */
+        .step-number,
+        .step-check {
+            transition: opacity 0.2s;
+        }
+    </style>
+
+    <script>
+        // Booking State
+        let bookingData = {
+            date: null,
+            startTime: null,
+            endTime: null,
+            seatType: null,
+            seatPrice: null,
+            reservationId: null
+        };
+
+        // Calendar State
+        let currentDate = new Date();
+        let selectedDate = null;
+        let currentMonth = currentDate.getMonth();
+        let currentYear = currentDate.getFullYear();
+        let currentStep = 1;
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeYearDropdown();
+            initializeTimeDropdowns();
+            renderCalendar();
+            setupEventListeners();
+            setupSeatSelection();
+            showStep(1);
+        });
+
+        // Initialize year dropdown
+        function initializeYearDropdown() {
+            const yearSelect = document.getElementById('yearSelect');
+            const currentYear = new Date().getFullYear();
+            
+            for (let year = currentYear; year <= currentYear + 5; year++) {
+                const option = document.createElement('option');
+                option.value = year;
+                option.textContent = year;
+                yearSelect.appendChild(option);
+            }
+            
+            yearSelect.value = currentYear;
+        }
+
+        // Initialize time dropdowns
+        function initializeTimeDropdowns() {
+            const startTime = document.getElementById('startTime');
+            const endTime = document.getElementById('endTime');
+            
+            // Generate time options (8 AM to 10 PM in 30-minute intervals)
+            for (let hour = 8; hour <= 22; hour++) {
+                for (let minute = 0; minute < 60; minute += 30) {
+                    const timeValue = `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`;
+                    const displayTime = formatTime(hour, minute);
+                    
+                    const startOption = document.createElement('option');
+                    startOption.value = timeValue;
+                    startOption.textContent = displayTime;
+                    startTime.appendChild(startOption);
+                    
+                    const endOption = document.createElement('option');
+                    endOption.value = timeValue;
+                    endOption.textContent = displayTime;
+                    endTime.appendChild(endOption);
+                }
+            }
+        }
+
+        // Format time to 12-hour format
+        function formatTime(hour, minute) {
+            const period = hour >= 12 ? 'PM' : 'AM';
+            const displayHour = hour > 12 ? hour - 12 : hour === 0 ? 12 : hour;
+            return `${displayHour}:${minute.toString().padStart(2, '0')} ${period}`;
+        }
+
+        // Render calendar
+        function renderCalendar() {
+            const calendarDays = document.getElementById('calendarDays');
+            const monthSelect = document.getElementById('monthSelect');
+            const yearSelect = document.getElementById('yearSelect');
+            
+            // Update dropdowns
+            monthSelect.value = currentMonth;
+            yearSelect.value = currentYear;
+            
+            // Clear existing days
+            calendarDays.innerHTML = '';
+            
+            // Get first day of month
+            const firstDay = new Date(currentYear, currentMonth, 1);
+            const lastDay = new Date(currentYear, currentMonth + 1, 0);
+            const prevLastDay = new Date(currentYear, currentMonth, 0);
+            
+            const firstDayIndex = firstDay.getDay();
+            const lastDayDate = lastDay.getDate();
+            const prevLastDayDate = prevLastDay.getDate();
+            
+            // Add previous month's days
+            for (let i = firstDayIndex - 1; i >= 0; i--) {
+                const day = prevLastDayDate - i;
+                const dayElement = createDayElement(day, 'outside');
+                calendarDays.appendChild(dayElement);
+            }
+            
+            // Add current month's days
+            const today = new Date();
+            for (let day = 1; day <= lastDayDate; day++) {
+                const date = new Date(currentYear, currentMonth, day);
+                const isToday = date.toDateString() === today.toDateString();
+                const isSelected = selectedDate && date.toDateString() === selectedDate.toDateString();
+                const isPast = date < new Date(today.getFullYear(), today.getMonth(), today.getDate());
+                
+                let classes = '';
+                if (isToday) classes += ' today';
+                if (isSelected) classes += ' selected';
+                if (isPast) classes += ' disabled';
+                
+                const dayElement = createDayElement(day, classes, date, !isPast);
+                calendarDays.appendChild(dayElement);
+            }
+            
+            // Add next month's days
+            const remainingDays = 42 - calendarDays.children.length; // 6 weeks
+            for (let day = 1; day <= remainingDays; day++) {
+                const dayElement = createDayElement(day, 'outside');
+                calendarDays.appendChild(dayElement);
+            }
+        }
+
+        // Create day element
+        function createDayElement(day, classes = '', date = null, clickable = false) {
+            const dayElement = document.createElement('div');
+            dayElement.className = `calendar-day ${classes}`;
+            dayElement.textContent = day;
+            
+            if (clickable && date) {
+                dayElement.addEventListener('click', () => selectDate(date, dayElement));
+            }
+            
+            return dayElement;
+        }
+
+        // Select date
+        function selectDate(date, element) {
+            selectedDate = date;
+            
+            // Update display
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('selectedDateDisplay').textContent = date.toLocaleDateString('en-US', options);
+            
+            // Update selected styling
+            document.querySelectorAll('.calendar-day').forEach(day => {
+                day.classList.remove('selected');
+            });
+            element.classList.add('selected');
+            
+            // Check if form is complete
+            checkFormComplete();
+        }
+
+        // Setup event listeners
+        function setupEventListeners() {
+            // Navigation buttons
+            document.getElementById('prevMonth').addEventListener('click', () => {
+                currentMonth--;
+                if (currentMonth < 0) {
+                    currentMonth = 11;
+                    currentYear--;
+                }
+                renderCalendar();
+            });
+
+            document.getElementById('nextMonth').addEventListener('click', () => {
+                currentMonth++;
+                if (currentMonth > 11) {
+                    currentMonth = 0;
+                    currentYear++;
+                }
+                renderCalendar();
+            });
+
+            // Dropdown changes
+            document.getElementById('monthSelect').addEventListener('change', (e) => {
+                currentMonth = parseInt(e.target.value);
+                renderCalendar();
+            });
+
+            document.getElementById('yearSelect').addEventListener('change', (e) => {
+                currentYear = parseInt(e.target.value);
+                renderCalendar();
+            });
+
+            // Time selection
+            document.getElementById('startTime').addEventListener('change', () => {
+                updateEndTimeOptions();
+                calculateDuration();
+                checkFormComplete();
+            });
+
+            document.getElementById('endTime').addEventListener('change', () => {
+                calculateDuration();
+                checkFormComplete();
+            });
+
+            // Step 1 Continue button
+            document.getElementById('step1ContinueBtn').addEventListener('click', () => {
+                if (selectedDate && document.getElementById('startTime').value && document.getElementById('endTime').value) {
+                    // Save booking data
+                    bookingData.date = selectedDate;
+                    bookingData.startTime = document.getElementById('startTime').value;
+                    bookingData.endTime = document.getElementById('endTime').value;
+                    
+                    // Go to step 2
+                    showStep(2);
+                }
+            });
+
+            // Step 2 Back button
+            document.getElementById('step2BackBtn').addEventListener('click', () => {
+                showStep(1);
+            });
+
+            // Step 2 Continue button
+            document.getElementById('step2ContinueBtn').addEventListener('click', () => {
+                if (bookingData.seatType) {
+                    // Go to step 3
+                    showStep(3);
+                    populatePaymentSummary();
+                }
+            });
+
+            // Step 3 Back button
+            document.getElementById('step3BackBtn').addEventListener('click', () => {
+                showStep(2);
+            });
+
+            // Confirm Payment button
+            document.getElementById('confirmPaymentBtn').addEventListener('click', () => {
+                // Generate reservation ID
+                bookingData.reservationId = generateReservationId();
+                
+                // Go to confirmation page
+                showStep(4);
+                populateConfirmationDetails();
+            });
+
+            // Save Image button
+            document.getElementById('saveImageBtn').addEventListener('click', () => {
+                html2canvas(document.getElementById('qrCodeCard')).then(canvas => {
+                    const link = document.createElement('a');
+                    link.download = `reservation-${bookingData.reservationId}.png`;
+                    link.href = canvas.toDataURL();
+                    link.click();
+                }).catch(() => {
+                    // Fallback: just alert the user
+                    alert('To save the QR code, please take a screenshot of this page.');
+                });
+            });
+        }
+
+        // Show specific step
+        function showStep(stepNumber) {
+            currentStep = stepNumber;
+            
+            // Hide all steps
+            document.querySelectorAll('.step-content').forEach(step => {
+                step.classList.remove('active');
+            });
+            
+            // Show current step
+            document.getElementById('step' + stepNumber).classList.add('active');
+            
+            // Hide progress indicator on confirmation page
+            const progressIndicator = document.getElementById('progressIndicator');
+            if (stepNumber === 4) {
+                progressIndicator.style.display = 'none';
+            } else {
+                progressIndicator.style.display = 'flex';
+                // Update progress indicators
+                updateProgressIndicator(stepNumber);
+            }
+        }
+
+        // Update progress indicator
+        function updateProgressIndicator(stepNumber) {
+            // Update all indicators
+            [1, 2, 3].forEach(num => {
+                const indicator = document.getElementById('step' + num + 'Indicator');
+                const stepNumberEl = indicator.querySelector('.step-number');
+                const stepCheckEl = indicator.querySelector('.step-check');
+                
+                if (num < stepNumber) {
+                    // Completed step - show check and keep brand color
+                    indicator.style.backgroundColor = 'var(--brand-2-700)';
+                    stepNumberEl.classList.add('hidden');
+                    stepCheckEl.classList.remove('hidden');
+                } else if (num === stepNumber) {
+                    // Current step - show number with brand color
+                    indicator.style.backgroundColor = 'var(--brand-2-700)';
+                    stepNumberEl.classList.remove('hidden');
+                    stepCheckEl.classList.add('hidden');
+                } else {
+                    // Future step - reset to gray
+                    indicator.style.backgroundColor = '';
+                    stepNumberEl.classList.remove('hidden');
+                    stepCheckEl.classList.add('hidden');
+                }
+            });
+            
+            // Update lines between steps
+            const line1to2 = document.getElementById('line1to2');
+            const line2to3 = document.getElementById('line2to3');
+            
+            // Line 1 to 2
+            if (stepNumber >= 2) {
+                line1to2.style.borderColor = 'var(--brand-2-700)';
+            } else {
+                line1to2.style.borderColor = '';
+            }
+            
+            // Line 2 to 3
+            if (stepNumber >= 3) {
+                line2to3.style.borderColor = 'var(--brand-2-700)';
+            } else {
+                line2to3.style.borderColor = '';
+            }
+        }
+
+        // Setup seat selection
+        function setupSeatSelection() {
+            const seatCards = document.querySelectorAll('.seat-card');
+            
+            seatCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    // Remove selected class from all cards
+                    seatCards.forEach(c => {
+                        c.classList.remove('selected');
+                    });
+                    
+                    // Add selected class to clicked card
+                    this.classList.add('selected');
+                    
+                    // Save seat data
+                    bookingData.seatType = this.dataset.seatType;
+                    bookingData.seatPrice = this.dataset.price;
+                    
+                    // Enable continue button
+                    document.getElementById('step2ContinueBtn').disabled = false;
+                });
+            });
+        }
+
+        // Update end time options based on start time
+        function updateEndTimeOptions() {
+            const startTime = document.getElementById('startTime').value;
+            const endTimeSelect = document.getElementById('endTime');
+            
+            if (!startTime) return;
+            
+            const [startHour, startMinute] = startTime.split(':').map(Number);
+            
+            // Enable all options first
+            Array.from(endTimeSelect.options).forEach(option => {
+                if (option.value) {
+                    const [endHour, endMinute] = option.value.split(':').map(Number);
+                    
+                    // Disable times that are before or equal to start time
+                    if (endHour < startHour || (endHour === startHour && endMinute <= startMinute)) {
+                        option.disabled = true;
+                    } else {
+                        option.disabled = false;
+                    }
+                }
+            });
+            
+            // Reset end time if it's now invalid
+            if (endTimeSelect.value) {
+                const selectedOption = endTimeSelect.options[endTimeSelect.selectedIndex];
+                if (selectedOption.disabled) {
+                    endTimeSelect.value = '';
+                }
+            }
+        }
+
+        // Calculate duration
+        function calculateDuration() {
+            const startTime = document.getElementById('startTime').value;
+            const endTime = document.getElementById('endTime').value;
+            const durationSpan = document.getElementById('duration');
+            const timeSummary = document.getElementById('timeSummary');
+            
+            if (startTime && endTime) {
+                const [startHour, startMinute] = startTime.split(':').map(Number);
+                const [endHour, endMinute] = endTime.split(':').map(Number);
+                
+                const startMinutes = startHour * 60 + startMinute;
+                const endMinutes = endHour * 60 + endMinute;
+                const durationMinutes = endMinutes - startMinutes;
+                
+                const hours = Math.floor(durationMinutes / 60);
+                const minutes = durationMinutes % 60;
+                
+                let durationText = '';
+                if (hours > 0) durationText += `${hours} hour${hours > 1 ? 's' : ''}`;
+                if (minutes > 0) durationText += `${hours > 0 ? ' ' : ''}${minutes} minute${minutes > 1 ? 's' : ''}`;
+                
+                durationSpan.textContent = durationText;
+                timeSummary.classList.remove('hidden');
+            } else {
+                timeSummary.classList.add('hidden');
+            }
+        }
+
+        // Check if form is complete
+        function checkFormComplete() {
+            const continueBtn = document.getElementById('step1ContinueBtn');
+            const startTime = document.getElementById('startTime').value;
+            const endTime = document.getElementById('endTime').value;
+            
+            if (selectedDate && startTime && endTime) {
+                continueBtn.disabled = false;
+            } else {
+                continueBtn.disabled = true;
+            }
+        }
+
+        // Populate payment summary
+        function populatePaymentSummary() {
+            // Date
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('summaryDate').textContent = bookingData.date.toLocaleDateString('en-US', options);
+            
+            // Time
+            const startTime12h = convertTo12Hour(bookingData.startTime);
+            const endTime12h = convertTo12Hour(bookingData.endTime);
+            document.getElementById('summaryTime').textContent = `${startTime12h} - ${endTime12h}`;
+            
+            // Seat Type
+            document.getElementById('summarySeat').textContent = getSeatTypeName(bookingData.seatType);
+            
+            // Calculate duration
+            const [startHour, startMinute] = bookingData.startTime.split(':').map(Number);
+            const [endHour, endMinute] = bookingData.endTime.split(':').map(Number);
+            const startMinutes = startHour * 60 + startMinute;
+            const endMinutes = endHour * 60 + endMinute;
+            const durationMinutes = endMinutes - startMinutes;
+            const hours = Math.floor(durationMinutes / 60);
+            const minutes = durationMinutes % 60;
+            
+            let durationText = '';
+            if (hours > 0) durationText += `${hours} hour${hours > 1 ? 's' : ''}`;
+            if (minutes > 0) durationText += `${hours > 0 ? ' ' : ''}${minutes} minute${minutes > 1 ? 's' : ''}`;
+            document.getElementById('summaryDuration').textContent = durationText;
+            
+            // Price breakdown
+            const durationInHours = durationMinutes / 60;
+            const baseRate = parseFloat(bookingData.seatPrice);
+            const subtotal = baseRate * durationInHours;
+            const discount = subtotal * 0.1; // 10% student discount
+            const total = subtotal - discount;
+            
+            document.getElementById('baseRate').textContent = baseRate.toFixed(2);
+            document.getElementById('durationHours').textContent = durationInHours.toFixed(2);
+            document.getElementById('subtotal').textContent = subtotal.toFixed(2);
+            document.getElementById('discount').textContent = discount.toFixed(2);
+            document.getElementById('totalPrice').textContent = total.toFixed(2);
+        }
+
+        // Helper function to convert 24h to 12h format
+        function convertTo12Hour(time24) {
+            const [hour, minute] = time24.split(':').map(Number);
+            const period = hour >= 12 ? 'PM' : 'AM';
+            const hour12 = hour > 12 ? hour - 12 : hour === 0 ? 12 : hour;
+            return `${hour12}:${minute.toString().padStart(2, '0')} ${period}`;
+        }
+
+        // Helper function to get seat type display name
+        function getSeatTypeName(seatType) {
+            const names = {
+                'solo': 'Solo Desk',
+                'group': 'Group Table',
+                'private': 'Private Table'
+            };
+            return names[seatType] || seatType;
+        }
+
+        // Helper function to calculate total
+        function calculateTotal() {
+            const [startHour, startMinute] = bookingData.startTime.split(':').map(Number);
+            const [endHour, endMinute] = bookingData.endTime.split(':').map(Number);
+            const startMinutes = startHour * 60 + startMinute;
+            const endMinutes = endHour * 60 + endMinute;
+            const durationMinutes = endMinutes - startMinutes;
+            const durationInHours = durationMinutes / 60;
+            const baseRate = parseFloat(bookingData.seatPrice);
+            const subtotal = baseRate * durationInHours;
+            const discount = subtotal * 0.1;
+            return subtotal - discount;
+        }
+
+        // Generate reservation ID
+        function generateReservationId() {
+            const prefix = 'TNK';
+            const timestamp = Date.now().toString().slice(-8);
+            const random = Math.floor(Math.random() * 1000).toString().padStart(3, '0');
+            return `${prefix}-${timestamp}-${random}`;
+        }
+
+        // Populate confirmation details
+        function populateConfirmationDetails() {
+            // Reservation ID
+            document.getElementById('reservationId').textContent = bookingData.reservationId;
+            
+            // Date
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('confirmDate').textContent = bookingData.date.toLocaleDateString('en-US', options);
+            
+            // Time
+            const startTime12h = convertTo12Hour(bookingData.startTime);
+            const endTime12h = convertTo12Hour(bookingData.endTime);
+            document.getElementById('confirmTime').textContent = `${startTime12h} - ${endTime12h}`;
+            
+            // Seat Type
+            document.getElementById('confirmSeat').textContent = getSeatTypeName(bookingData.seatType);
+            
+            // Calculate duration
+            const [startHour, startMinute] = bookingData.startTime.split(':').map(Number);
+            const [endHour, endMinute] = bookingData.endTime.split(':').map(Number);
+            const startMinutes = startHour * 60 + startMinute;
+            const endMinutes = endHour * 60 + endMinute;
+            const durationMinutes = endMinutes - startMinutes;
+            const hours = Math.floor(durationMinutes / 60);
+            const minutes = durationMinutes % 60;
+            
+            let durationText = '';
+            if (hours > 0) durationText += `${hours} hour${hours > 1 ? 's' : ''}`;
+            if (minutes > 0) durationText += `${hours > 0 ? ' ' : ''}${minutes} minute${minutes > 1 ? 's' : ''}`;
+            document.getElementById('confirmDuration').textContent = durationText;
+            
+            // Total
+            document.getElementById('confirmTotal').textContent = calculateTotal().toFixed(2);
+        }
+    </script>
+    
+    <!-- html2canvas for screenshot functionality -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    
+  </body>
+</html>
