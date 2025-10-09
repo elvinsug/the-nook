@@ -27,8 +27,10 @@
                 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center gap-9 h6 absolute left-1/2 transform -translate-x-1/2">
-                    <a href="../src/index.html" class="hover:opacity-60 transition-opacity">Home</a>
+                    <a href="../src/index.html" class="hover:opacity-60 transition-opacity underline underline-offset-4">Home</a>
                     <a href="./pages/menu/index.html" class="hover:opacity-60 transition-opacity">Menu</a>
+                    <a class="hover:opacity-60 transition-opacity">Membership</a>
+                    <a href="./pages/about/index.html" class="hover:opacity-60 transition-opacity">About Us</a>
                     <a href="./pages/contact/index.html" class="hover:opacity-60 transition-opacity">Contact</a>
                 </div>
                 
@@ -71,14 +73,30 @@
         class="w-screen h-screen grid grid-cols-1 items-end justify-items-start md:grid-cols-2 p-6 md:p-20"
       >
         <div class="flex flex-col gap-4 md:gap-6 text-white">
-          <p class="display">Study All Day. <br />Pay Less Than Lunch.</p>
+          <p class="display">The Study Spot Everyone's Talking About</p>
           <p class="p md:text-lg">
-            From late-night cramming to thesis triumphs, find your focus in
-            Singapore's favorite study café.
+            Join 500+ students who've ditched overpriced cafés and crowded libraries. <br class="hidden md:block">
+Here, you belong. Here, you focus. Here, you ace it.
           </p>
+          <div class="flex flex-col md:flex-row gap-3 md:gap-5 text-white/90 p-4 md:p-5 bg-black/10 backdrop-blur-sm w-fit">
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <p class="p md:text-base">8:00 AM - 11:00 PM Daily</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <p class="p md:text-base">123 Study Street, Singapore</p>
+            </div>
+          </div>
           <div class="flex gap-2 md:gap-4">
             <a href="./pages/booking/index.html" class="btn-secondary">
-              <p class="h6">Reserve Your Seat</p>
+              <p class="h6">Reserve My Seat</p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -127,7 +145,7 @@
             </div>
             <h3 class="h2">Save More, Study Better.</h3>
             <p class="opacity-60">
-              Limited weekly deals. Reserve now, they sell out fast.
+              Limited weekly deals. Reserve now before they sell out.
             </p>
           </div>
 
@@ -279,28 +297,14 @@
               fill="none"
             >
               <path
-                d="M17.9998 33.0001C26.284 33.0001 32.9998 26.2844 32.9998 18.0001C32.9998 9.71582 26.284 3.00009 17.9998 3.00009C9.71549 3.00009 2.99976 9.71582 2.99976 18.0001C2.99976 26.2844 9.71549 33.0001 17.9998 33.0001Z"
+                d="M18 9.00007V18.0001L24 21.0001"
                 stroke="#1F1F1F"
                 stroke-width="3"
                 stroke-linecap="round"
                 stroke-linejoin="round"
               />
               <path
-                d="M11.9998 21.0001C11.9998 21.0001 14.2498 24.0001 17.9998 24.0001C21.7498 24.0001 23.9998 21.0001 23.9998 21.0001"
-                stroke="#1F1F1F"
-                stroke-width="3"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M13.5 13.5H13.515"
-                stroke="#1F1F1F"
-                stroke-width="3"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M22.5 13.5H22.515"
+                d="M18.0005 33C26.2848 33 33.0005 26.2843 33.0005 18C33.0005 9.71575 26.2848 3.00002 18.0005 3.00002C9.71622 3.00002 3.00049 9.71575 3.00049 18C3.00049 26.2843 9.71622 33 18.0005 33Z"
                 stroke="#1F1F1F"
                 stroke-width="3"
                 stroke-linecap="round"
@@ -308,8 +312,8 @@
               />
             </svg>
             <div class="space-y-2">
-              <p class="h4">700+</p>
-              <p>Happy Students</p>
+              <p class="h4">15 Hours</p>
+              <p>From 8am - 11pm daily</p>
             </div>
           </div>
           <div
@@ -353,7 +357,7 @@
               />
             </svg>
             <div class="space-y-2">
-              <p class="h4">5G</p>
+              <p class="h4">500 Mbps </p>
               <p>WiFi Speed</p>
             </div>
           </div>
@@ -369,14 +373,28 @@
               fill="none"
             >
               <path
-                d="M18 9.00007V18.0001L24 21.0001"
+                d="M17.9998 33.0001C26.284 33.0001 32.9998 26.2844 32.9998 18.0001C32.9998 9.71582 26.284 3.00009 17.9998 3.00009C9.71549 3.00009 2.99976 9.71582 2.99976 18.0001C2.99976 26.2844 9.71549 33.0001 17.9998 33.0001Z"
                 stroke="#1F1F1F"
                 stroke-width="3"
                 stroke-linecap="round"
                 stroke-linejoin="round"
               />
               <path
-                d="M18.0005 33C26.2848 33 33.0005 26.2843 33.0005 18C33.0005 9.71575 26.2848 3.00002 18.0005 3.00002C9.71622 3.00002 3.00049 9.71575 3.00049 18C3.00049 26.2843 9.71622 33 18.0005 33Z"
+                d="M11.9998 21.0001C11.9998 21.0001 14.2498 24.0001 17.9998 24.0001C21.7498 24.0001 23.9998 21.0001 23.9998 21.0001"
+                stroke="#1F1F1F"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M13.5 13.5H13.515"
+                stroke="#1F1F1F"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M22.5 13.5H22.515"
                 stroke="#1F1F1F"
                 stroke-width="3"
                 stroke-linecap="round"
@@ -384,8 +402,8 @@
               />
             </svg>
             <div class="space-y-2">
-              <p class="h4">8am - 11pm</p>
-              <p>Open Daily</p>
+              <p class="h4">10,000+</p>
+              <p>Study Hours</p>
             </div>
           </div>
           <div
@@ -409,7 +427,7 @@
             </svg>
             <div class="space-y-2">
               <p class="h4">4.9/5.0</p>
-              <p>Google Reviews</p>
+              <p>Google Review Rating</p>
             </div>
           </div>
         </div>
@@ -419,7 +437,7 @@
       <section class="w-screen px-6">
         <div
           style="background-color: var(--beige-500)"
-          class="flex flex-col items-center py-12 md:py-24 gap-9 md:gap-12 px-6"
+          class="flex flex-col items-center py-12 md:py-24 gap-12 md:gap-20 px-6"
         >
           <!-- The Header -->
           <div class="gap-3 md:gap-5 flex flex-col items-center">
@@ -427,8 +445,8 @@
               How To Reserve
             </div>
             <h3 class="h2 text-center">
-              Reserving You Seat <br />
-              Is Ridiculously Simple
+              Reserving Your Seat <br />
+              Is Ridiculously Easy
             </h3>
           </div>
 
@@ -468,6 +486,23 @@
               </div>
             </div>
           </div>
+
+          <div class="flex flex-col gap-5 md:gap-6 items-center">
+
+            <!-- Social Proof -->
+             <p class="text-center">2,000+ Study Sessions booked. <br class="md:hidden"> Join the productivity train today!</p>
+  
+             <!-- CTA -->
+             <div class="flex items-center gap-3 md:gap-4">
+              <a href="../src/pages/booking/index.html" class="btn-primary justify-center">
+                  <p class="h6">Reserve Now</p>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M6 12L10 8L6 4" stroke="white" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+              </a>
+          </div>
+            
+        </div>
         </div>
       </section>
 
@@ -914,7 +949,7 @@
      <section class="w-screen overflow-hidden">
       <div class="flex flex-col py-12 md:py-24 gap-6 md:gap-12">
         <!-- The Header -->
-        <div class="gap-3 md:gap-5 flex flex-col px-6 md:px-20">
+        <div class="gap-3 md:gap-5 flex flex-col px-6 md:px-20 items-center text-center">
           <div class="h6 px-4 py-3 border-black/10 border-[1px] w-fit">
             Student Reviews
           </div>
@@ -1227,7 +1262,7 @@
             </svg>
             <p class="h4">4.9/5.0</p>
           </div>
-          <p class="opacity-60">Based on 247+ Google reviews</p>
+          <p class="opacity-60">Based on 700+ Google reviews</p>
         </div>
       </div>
     </section>

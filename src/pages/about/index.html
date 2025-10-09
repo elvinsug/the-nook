@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en" class="no-scrollbar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Nook | About Us</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../global.css" />
+    <link rel="icon" type="image/x-icon" href="../../../public/favicon.ico" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body class="no-scrollbar">
+    <main class="flex flex-col overflow-x-hidden relative">
+      <!-- Navbar -->
+      <nav class="fixed left-4 right-4 top-4 z-50 bg-white">
+        <div
+          class="flex items-center justify-between px-4 md:px-6 py-3 relative"
+        >
+          <!-- Logo -->
+          <a href="../../index.html" class="flex-shrink-0 px-2">
+            <img
+              src="../../../public/logo/with-text-dark.svg"
+              alt="Logo"
+              class="w-auto h-9 md:h-12 hidden md:block"
+            />
+            <img
+              src="../../../public/logo/icon-only-dark.svg"
+              alt="Logo"
+              class="w-auto h-full md:hidden"
+            />
+          </a>
+
+          <!-- Desktop Navigation -->
+          <div
+            class="hidden md:flex items-center gap-9 h6 absolute left-1/2 transform -translate-x-1/2"
+          >
+            <a
+              href="../../index.html"
+              class="hover:opacity-60 transition-opacity"
+              >Home</a
+            >
+            <a
+              href="../menu/index.html"
+              class="hover:opacity-60 transition-opacity"
+              >Menu</a
+            >
+            <a class="hover:opacity-60 transition-opacity">Membership</a>
+            <a
+              href="../about/index.html"
+              class="opacity-100 font-bold transition-opacity underline underline-offset-4"
+              >About Us</a
+            >
+            <a
+              href="../contact/index.html"
+              class="hover:opacity-60 transition-opacity"
+              >Contact</a
+            >
+          </div>
+
+          <!-- Right Side -->
+          <div class="flex items-center gap-3 md:gap-4">
+            <a href="../booking/index.html" class="btn-primary justify-center">
+              <p class="h6">Reserve Now</p>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+              >
+                <path
+                  d="M6 12L10 8L6 4"
+                  stroke="white"
+                  stroke-width="1.33333"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </a>
+
+            <!-- Mobile Menu Toggle -->
+            <button
+              class="md:hidden p-2"
+              onclick="document.getElementById('mobileMenu').classList.toggle('hidden')"
+            >
+              <img
+                src="../../../public/icon/menu.svg"
+                alt="Menu"
+                class="w-6 h-6"
+              />
+            </button>
+          </div>
+
+          <!-- Mobile Menu Dropdown -->
+          <div
+            id="mobileMenu"
+            class="hidden md:hidden absolute top-full left-0 right-0 border-t-black/10 border-t-[1px] bg-white p-6"
+          >
+            <div class="flex flex-col h4 gap-5">
+              <a
+                href="../../index.html"
+                class="hover:opacity-60 transition-opacity"
+                >Home</a
+              >
+              <a
+                href="../menu/index.html"
+                class="hover:opacity-60 transition-opacity"
+                >Menu</a
+              >
+              <a class="hover:opacity-60 transition-opacity">Membership</a>
+              <a
+                href="../about/index.html"
+                class="opacity-100 font-bold transition-opacity"
+                >About Us</a
+              >
+              <a
+                href="../contact/index.html"
+                class="hover:opacity-60 transition-opacity"
+                >Contact</a
+              >
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Hero Section -->
+      <section
+        style="
+          background: linear-gradient(
+              180deg,
+              rgba(60, 44, 37, 0) 50%,
+              rgba(60, 44, 37, 0.45) 100%
+            ),
+            url(../../../public/about/hero.jpg) lightgray 50% / cover no-repeat;
+        "
+        class="w-screen h-[calc(50vh)] md:h-[calc(65vh)] grid grid-cols-1 items-end justify-items-start md:grid-cols-2 p-6 md:p-20"
+      >
+        <div class="flex flex-col gap-4 md:gap-6 text-white">
+          <p class="display">Built by Students, <br />For Students.</p>
+          <p class="p md:text-lg">
+            We understand the struggle of finding an affordable, comfortable
+            space to study. That's why we created The Nook—a place where you can
+            focus, thrive, and belong.
+          </p>
+        </div>
+      </section>
+
+      <!-- OUR STORY SECTION -->
+      <div
+        class="w-screen xl:max-w-7xl mx-auto px-6 md:px-20 py-12 md:py-24 gap-6 md:gap-20 grid grid-cols-1 md:grid-cols-2 md:place-items-center"
+      >
+        <!-- The Left Part -->
+        <img
+          src="../../../public/about/pour-coffee.jpg"
+          alt="Our Story Image"
+          class="w-full h-auto object-cover"
+        />
+        <!-- The Right Part -->
+        <div>
+          <!-- The Header -->
+          <div class="gap-3 md:gap-5 flex flex-col">
+            <div class="h6 px-4 py-3 border-black/10 border-[1px] w-fit">
+              Our Story
+            </div>
+            <h3 class="h2">Why We Built This For Students</h3>
+            <p class="opacity-65">
+              I was that student pulling all-nighters in Starbucks and
+              libraries, spending $30/day, fighting for a seat with a power
+              socket. <i>There had to be a better way.</i>
+            </p>
+            <p class="opacity-65">
+              So I created <strong>The Nook </strong>- a space where students
+              can study affordably, guilt-free, with guaranteed seats and every
+              amenity you need to succeed.
+            </p>
+            <p class="h6 opacity-65">
+              ~ Elvin Sugianto,
+              <span class="p"
+                >Founder of The Nook (Final Year Student at NTU)</span
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- The Journey Section -->
+      <div class="w-screen bg-neutral-50 px-6 md:px-20 py-12 md:py-24">
+        <div class="xl:max-w-7xl mx-auto">
+          <!-- Section Header -->
+          <div class="flex flex-col gap-3 md:gap-5 mb-12 md:mb-20 text-center">
+            <div
+              class="h6 px-4 py-3 border-black/10 border-[1px] w-fit mx-auto"
+            >
+              Our Journey
+            </div>
+            <h3 class="h2">From Idea to Reality</h3>
+            <p class="p opacity-65 max-w-2xl mx-auto">
+              Every great space starts with a simple problem. Here's how we
+              turned student struggles into solutions.
+            </p>
+          </div>
+
+          <!-- Timeline -->
+          <div class="relative">
+            <!-- Vertical Line (hidden on mobile) -->
+            <div
+              class="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-transparent via-black/20 to-transparent transform -translate-x-1/2"
+            ></div>
+
+            <!-- Timeline Items -->
+            <div class="flex flex-col gap-12 md:gap-20">
+              <!-- Item 1 - Left -->
+              <div
+                class="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-6 md:gap-12 items-center"
+              >
+                <div class="md:text-right">
+                  <div
+                    class="bg-white p-6 md:p-8 shadow-sm border border-black/5"
+                  >
+                    <div class="flex flex-col gap-3">
+                      <div class="h6" style="color: var(--brand-2-700)">
+                        Late 2023
+                      </div>
+                      <h4 class="h4">The Problem Identified</h4>
+                      <p class="p opacity-65">
+                        As a university student, I found myself spending $30+
+                        daily at cafes, fighting for seats with power outlets,
+                        and feeling guilty about staying too long. Something had
+                        to change.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="hidden md:flex justify-center">
+                  <div
+                    class="w-8 h-8 rounded-full z-20 border-4 border-white shadow-md"
+                    style="background-color: var(--brand-2-700)"
+                  ></div>
+                </div>
+                <div class="hidden md:block"></div>
+              </div>
+
+              <!-- Item 2 - Right -->
+              <div
+                class="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-6 md:gap-12 items-center"
+              >
+                <div class="hidden md:block"></div>
+                <div class="hidden md:flex justify-center">
+                  <div
+                    class="w-8 h-8 rounded-full z-20 border-4 border-white shadow-md"
+                    style="background-color: var(--brand-2-700)"
+                  ></div>
+                </div>
+                <div class="md:text-left">
+                  <div
+                    class="bg-white p-6 md:p-8 shadow-sm border border-black/5"
+                  >
+                    <div class="flex flex-col gap-3">
+                      <div class="h6" style="color: var(--brand-2-700)">
+                        Early 2024
+                      </div>
+                      <h4 class="h4">The Vision Takes Shape</h4>
+                      <p class="p opacity-65">
+                        We surveyed 500+ students and discovered everyone faced
+                        the same struggle. The solution? A dedicated student
+                        space with affordable food, guaranteed seats, and zero
+                        pressure to leave.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 3 - Left -->
+              <div
+                class="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-6 md:gap-12 items-center"
+              >
+                <div class="md:text-right">
+                  <div
+                    class="bg-white p-6 md:p-8 shadow-sm border border-black/5"
+                  >
+                    <div class="flex flex-col gap-3">
+                      <div class="h6" style="color: var(--brand-2-700)">
+                        Mid 2024
+                      </div>
+                      <h4 class="h4">Building The Nook</h4>
+                      <p class="p opacity-65">
+                        Months of planning, designing, and partnering with local
+                        suppliers who believed in our mission. Every detail was
+                        crafted with students in mind—from desk heights to
+                        lighting.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="hidden md:flex justify-center">
+                  <div
+                    class="w-8 h-8 rounded-full z-20 border-4 border-white shadow-md"
+                    style="background-color: var(--brand-2-700)"
+                  ></div>
+                </div>
+                <div class="hidden md:block"></div>
+              </div>
+
+              <!-- Item 4 - Right -->
+              <div
+                class="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-6 md:gap-12 items-center"
+              >
+                <div class="hidden md:block"></div>
+                <div class="hidden md:flex justify-center">
+                  <div
+                    class="w-8 h-8 rounded-full z-20 border-4 border-white shadow-md"
+                    style="background-color: var(--brand-2-700)"
+                  ></div>
+                </div>
+                <div class="md:text-left">
+                  <div
+                    class="bg-white p-6 md:p-8 shadow-sm border border-black/5"
+                  >
+                    <div class="flex flex-col gap-3">
+                      <div class="h6" style="color: var(--brand-2-700)">
+                        October 2024
+                      </div>
+                      <h4 class="h4">Grand Opening</h4>
+                      <p class="p opacity-65">
+                        We opened our doors to the student community. The
+                        response was overwhelming—students finally had a space
+                        they could call their own, without breaking the bank.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 5 - Left (Current/Future) -->
+              <div
+                class="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-6 md:gap-12 items-center"
+              >
+                <div class="md:text-right">
+                  <div
+                    class="p-6 md:p-8 shadow-sm border-2 border-dashed"
+                    style="
+                      background-color: var(--brand-2-50);
+                      border-color: var(--brand-2-700);
+                    "
+                  >
+                    <div class="flex flex-col gap-3">
+                      <div class="h6" style="color: var(--brand-2-700)">
+                        Today & Beyond
+                      </div>
+                      <h4 class="h4">Growing Together</h4>
+                      <p class="p opacity-65">
+                        We're constantly evolving based on your feedback. Better
+                        amenities, and a stronger community—because your success
+                        is our mission.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="hidden md:flex justify-center">
+                  <div
+                    class="w-8 h-8 rounded-full z-20 border-4 border-white shadow-md flex items-center justify-center"
+                    style="background-color: var(--brand-2-700)"
+                  >
+                    <div
+                      class="w-3 h-3 rounded-full bg-white animate-pulse"
+                    ></div>
+                  </div>
+                </div>
+                <div class="hidden md:block"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- The Mission Section -->
+      <div class="w-screen px-6 md:px-20 py-12 md:py-24">
+        <div class="xl:max-w-7xl mx-auto">
+          <!-- The Header -->
+          <div
+            class="gap-3 md:gap-5 flex flex-col text-center max-w-4xl mx-auto mb-12 md:mb-16"
+          >
+            <div
+              class="h6 px-4 py-3 border-black/10 border-[1px] w-fit mx-auto"
+            >
+              Our Mission
+            </div>
+            <h3 class="h2">Empowering Students to Succeed</h3>
+            <p class="opacity-65">
+              We exist to remove the barriers that hold students back. Every
+              decision we make is guided by one question: How does this help
+              students focus, learn, and thrive?
+            </p>
+          </div>
+
+          <!-- Mission Values Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+            <!-- Value 1 -->
+            <div
+              class="flex flex-col items-center text-center gap-4 p-6 md:p-8"
+            >
+              <div
+                class="w-12 h-12 flex items-center justify-center"
+                style="color: var(--brand-2-700)"
+              >
+                <i data-lucide="target" class="w-12 h-12"></i>
+              </div>
+              <h4 class="h4">Accessible & Stress-Free</h4>
+              <p class="p opacity-65">
+                Affordable spaces for long study sessions without the guilt or
+                pressure.
+              </p>
+            </div>
+
+            <!-- Value 2 -->
+            <div
+              class="flex flex-col items-center text-center gap-4 p-6 md:p-8"
+            >
+              <div
+                class="w-12 h-12 flex items-center justify-center"
+                style="color: var(--brand-2-700)"
+              >
+                <i data-lucide="heart-handshake" class="w-12 h-12"></i>
+              </div>
+              <h4 class="h4">Student Success</h4>
+              <p class="p opacity-65">
+                Every detail designed to help you focus and achieve your goals.
+              </p>
+            </div>
+
+            <!-- Value 3 -->
+            <div
+              class="flex flex-col items-center text-center gap-4 p-6 md:p-8"
+            >
+              <div
+                class="w-12 h-12 flex items-center justify-center"
+                style="color: var(--brand-2-700)"
+              >
+                <i data-lucide="users" class="w-12 h-12"></i>
+              </div>
+              <h4 class="h4">Community Over Café</h4>
+              <p class="p opacity-65">
+                A supportive space where students connect and thrive together.
+              </p>
+            </div>
+          </div>
+         </div>
+       </div>
+
+      <!-- Amenities Section -->
+      <div class="w-screen bg-neutral-50 px-6 md:px-20 py-12 md:py-24">
+        <div class="xl:max-w-7xl mx-auto">
+          <!-- Section Header -->
+          <div class="flex flex-col gap-3 md:gap-5 mb-12 md:mb-16 text-center">
+            <div
+              class="h6 px-4 py-3 border-black/10 border-[1px] w-fit mx-auto"
+            >
+              Amenities
+            </div>
+            <h3 class="h2">Everything You Need to Succeed</h3>
+            <p class="p opacity-65 max-w-2xl mx-auto">
+              We've thought of everything so you can focus on your studies.
+            </p>
+          </div>
+
+          <!-- Content Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+            <!-- Left Side - Amenities Grid -->
+            <div class="grid grid-cols-2 gap-4 md:gap-6">
+              <!-- Amenity 1 -->
+              <div class="flex flex-col gap-3 p-4 md:p-6 bg-white border border-black/5">
+                <div class="w-8 h-8 flex items-center justify-center" style="color: var(--brand-2-700)">
+                  <i data-lucide="wifi" class="w-8 h-8"></i>
+                </div>
+                <h5 class="h6">High-Speed WiFi</h5>
+              </div>
+
+              <!-- Amenity 2 -->
+              <div class="flex flex-col gap-3 p-4 md:p-6 bg-white border border-black/5">
+                <div class="w-8 h-8 flex items-center justify-center" style="color: var(--brand-2-700)">
+                  <i data-lucide="plug-zap" class="w-8 h-8"></i>
+                </div>
+                <h5 class="h6">Power Outlets</h5>
+              </div>
+
+              <!-- Amenity 3 -->
+              <div class="flex flex-col gap-3 p-4 md:p-6 bg-white border border-black/5">
+                <div class="w-8 h-8 flex items-center justify-center" style="color: var(--brand-2-700)">
+                  <i data-lucide="armchair" class="w-8 h-8"></i>
+                </div>
+                <h5 class="h6">Comfy Seating</h5>
+              </div>
+
+              <!-- Amenity 4 -->
+              <div class="flex flex-col gap-3 p-4 md:p-6 bg-white border border-black/5">
+                <div class="w-8 h-8 flex items-center justify-center" style="color: var(--brand-2-700)">
+                  <i data-lucide="air-vent" class="w-8 h-8"></i>
+                </div>
+                <h5 class="h6">Air Conditioning</h5>
+              </div>
+
+              <!-- Amenity 5 -->
+              <div class="flex flex-col gap-3 p-4 md:p-6 bg-white border border-black/5">
+                <div class="w-8 h-8 flex items-center justify-center" style="color: var(--brand-2-700)">
+                  <i data-lucide="coffee" class="w-8 h-8"></i>
+                </div>
+                <h5 class="h6">Fresh Coffee</h5>
+              </div>
+
+              <!-- Amenity 6 -->
+              <div class="flex flex-col gap-3 p-4 md:p-6 bg-white border border-black/5">
+                <div class="w-8 h-8 flex items-center justify-center" style="color: var(--brand-2-700)">
+                  <i data-lucide="printer" class="w-8 h-8"></i>
+                </div>
+                <h5 class="h6">Printing</h5>
+              </div>
+
+              <!-- Amenity 7 -->
+              <div class="flex flex-col gap-3 p-4 md:p-6 bg-white border border-black/5">
+                <div class="w-8 h-8 flex items-center justify-center" style="color: var(--brand-2-700)">
+                  <i data-lucide="sun" class="w-8 h-8"></i>
+                </div>
+                <h5 class="h6">Natural Light</h5>
+              </div>
+
+              <!-- Amenity 8 -->
+              <div class="flex flex-col gap-3 p-4 md:p-6 bg-white border border-black/5">
+                <div class="w-8 h-8 flex items-center justify-center" style="color: var(--brand-2-700)">
+                  <i data-lucide="volume-x" class="w-8 h-8"></i>
+                </div>
+                <h5 class="h6">Quiet Zones</h5>
+              </div>
+            </div>
+
+            <!-- Right Side - Cafe Image -->
+            <div class="order-first md:order-last h-full">
+              <img
+                src="../../../public/home/study-ambience.webp"
+                alt="The Nook Cafe Interior"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonials Section -->
+      <section class="w-screen overflow-hidden">
+        <div class="flex flex-col py-12 md:py-24 gap-6 md:gap-12">
+          <!-- The Header -->
+          <div class="gap-3 md:gap-5 flex flex-col px-6 md:px-20 text-center items-center">
+            <div class="h6 px-4 py-3 border-black/10 border-[1px] w-fit">
+              Student Reviews
+            </div>
+            <h3 class="h2">Real Students, Real Results.</h3>
+            <p class="opacity-60">
+              See why students choose The Nook for their study sessions.
+            </p>
+          </div>
+
+          <!-- Scrolling Testimonials -->
+          <div class="testimonial-container">
+            <div class="testimonial-track">
+              <!-- First Set of Testimonials -->
+              <div class="testimonial-card">
+                <div class="flex flex-col gap-4">
+                  <div class="flex items-center gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <p class="h6">Sarah L., NUS Economics</p>
+                  <p class="opacity-60">"I used to spend $30/day at Starbucks. Here I pay $18 for 4 hours PLUS coffee and actually get work done! No more fighting for outlets."</p>
+                </div>
+              </div>
+
+              <div class="testimonial-card">
+                <div class="flex flex-col gap-4">
+                  <div class="flex items-center gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <p class="h6">Marcus T., SMU Business</p>
+                  <p class="opacity-60">"Finally found a place where I can take Zoom calls without dirty looks. The private rooms are a game-changer for group projects!"</p>
+                </div>
+              </div>
+
+              <div class="testimonial-card">
+                <div class="flex flex-col gap-4">
+                  <div class="flex items-center gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <p class="h6">Priya K., NTU Computer Science</p>
+                  <p class="opacity-60">"The WiFi here is faster than my dorm. Submitted my final year project here and everything just worked. Definitely my go-to spot now."</p>
+                </div>
+              </div>
+
+              <div class="testimonial-card">
+                <div class="flex flex-col gap-4">
+                  <div class="flex items-center gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <p class="h6">Daniel C., SUTD Engineering</p>
+                  <p class="opacity-60">"Been coming here every day for 3 weeks straight. The vibe is perfect—not too quiet, not too loud. Plus the food is actually good."</p>
+                </div>
+              </div>
+
+              <div class="testimonial-card">
+                <div class="flex flex-col gap-4">
+                  <div class="flex items-center gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <p class="h6">Emma W., LASALLE Arts</p>
+                  <p class="opacity-60">"As a design student, I need inspiration and good lighting. The Nook has both. My productivity has literally doubled since I found this place."</p>
+                </div>
+              </div>
+
+              <div class="testimonial-card">
+                <div class="flex flex-col gap-4">
+                  <div class="flex items-center gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <p class="h6">Ryan H., NUS Medicine</p>
+                  <p class="opacity-60">"Med school is brutal. This is my sanctuary. Comfy seats, strong coffee, and no one bothers you. Worth every dollar for my mental health."</p>
+                </div>
+              </div>
+
+              <!-- Duplicate Set for Seamless Loop -->
+              <div class="testimonial-card">
+                <div class="flex flex-col gap-4">
+                  <div class="flex items-center gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <p class="h6">Sarah L., NUS Economics</p>
+                  <p class="opacity-60">"I used to spend $30/day at Starbucks. Here I pay $18 for 4 hours PLUS coffee and actually get work done! No more fighting for outlets."</p>
+                </div>
+              </div>
+
+              <div class="testimonial-card">
+                <div class="flex flex-col gap-4">
+                  <div class="flex items-center gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <p class="h6">Marcus T., SMU Business</p>
+                  <p class="opacity-60">"Finally found a place where I can take Zoom calls without dirty looks. The private rooms are a game-changer for group projects!"</p>
+                </div>
+              </div>
+
+              <div class="testimonial-card">
+                <div class="flex flex-col gap-4">
+                  <div class="flex items-center gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <p class="h6">Priya K., NTU Computer Science</p>
+                  <p class="opacity-60">"The WiFi here is faster than my dorm. Submitted my final year project here and everything just worked. Definitely my go-to spot now."</p>
+                </div>
+              </div>
+
+              <div class="testimonial-card">
+                <div class="flex flex-col gap-4">
+                  <div class="flex items-center gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <p class="h6">Daniel C., SUTD Engineering</p>
+                  <p class="opacity-60">"Been coming here every day for 3 weeks straight. The vibe is perfect—not too quiet, not too loud. Plus the food is actually good."</p>
+                </div>
+              </div>
+
+              <div class="testimonial-card">
+                <div class="flex flex-col gap-4">
+                  <div class="flex items-center gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <p class="h6">Emma W., LASALLE Arts</p>
+                  <p class="opacity-60">"As a design student, I need inspiration and good lighting. The Nook has both. My productivity has literally doubled since I found this place."</p>
+                </div>
+              </div>
+
+              <div class="testimonial-card">
+                <div class="flex flex-col gap-4">
+                  <div class="flex items-center gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 1.33334L9.84 5.06001L14 5.66668L11 8.58668L11.708 12.7267L8 10.7867L4.292 12.7267L5 8.58668L2 5.66668L6.16 5.06001L8 1.33334Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <p class="h6">Ryan H., NUS Medicine</p>
+                  <p class="opacity-60">"Med school is brutal. This is my sanctuary. Comfy seats, strong coffee, and no one bothers you. Worth every dollar for my mental health."</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Google Reviews Badge -->
+          <div class="flex flex-col items-center gap-3 px-6 md:px-20">
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M10 1.66669L12.575 6.88335L18.3333 7.72502L14.1667 11.7917L15.15 17.5167L10 14.8167L4.85 17.5167L5.83333 11.7917L1.66667 7.72502L7.425 6.88335L10 1.66669Z" fill="#FFA500" stroke="#FFA500" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <p class="h4">4.9/5.0</p>
+            </div>
+            <p class="opacity-60">Based on 700+ Google reviews</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <section
+        style="background-color: var(--brand-2-700)"
+        class="w-screen flex flex-col items-center px-6 md:px-20 pt-12 md:pt-24 pb-3 md:pb-9 gap-12 text-white"
+      >
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12">
+          <img
+            src="../../../public/footer/footer.png"
+            alt="Footer"
+            class="col-span-1 md:col-span-7 h-full object-cover w-full"
+          />
+          <div
+            class="min-h-full flex flex-col gap-6 md:gap-12 justify-between col-span-1 md:col-span-5"
+          >
+            <div class="flex flex-col gap-6 md:gap-12">
+              <h3 class="h2">Our Location</h3>
+              <div class="flex flex-col gap-4 md:gap-6">
+                <div class="flex gap-3 md:gap-3 items-center">
+                  <img
+                    src="../../../public/icon/location.svg"
+                    alt="Location"
+                    class="w-6 h-6"
+                  />
+                  <p class="h6">
+                    123 Study Street, Singapore 123456
+                    <span class="p">(5-min walk from Kent Ridge MRT)</span>
+                  </p>
+                </div>
+                <div class="flex gap-3 md:gap-3 items-center">
+                  <img
+                    src="../../../public/icon/clock.svg"
+                    alt="Hours"
+                    class="w-6 h-6"
+                  />
+                  <p class="h6">8am - 11pm (Open Daily)</p>
+                </div>
+                <div class="flex gap-3 md:gap-3 items-center">
+                  <img
+                    src="../../../public/icon/phone.svg"
+                    alt="Phone"
+                    class="w-6 h-6"
+                  />
+                  <p class="h6">+65 1234 5678</p>
+                </div>
+                <div class="flex gap-3 md:gap-3 items-center">
+                  <img
+                    src="../../../public/icon/mail.svg"
+                    alt="Email"
+                    class="w-6 h-6"
+                  />
+                  <p class="h6">info@thenook.sg</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex gap-2 md:gap-4">
+              <a href="../contact/index.html" class="btn-secondary">
+                <p class="h6">Contact Us</p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                >
+                  <path
+                    d="M6 12L10 8L6 4"
+                    stroke="black"
+                    stroke-width="1.33333"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+              <button class="btn-tertiary">
+                <p class="h6">Locate Us</p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                >
+                  <path
+                    d="M6 12L10 8L6 4"
+                    stroke="white"
+                    stroke-width="1.33333"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <hr class="border-white/10 w-full" />
+        <a href="../../index.html">
+          <img
+            src="../../../public/logo/with-text-white.svg"
+            alt="Logo"
+            class="w-auto h-24"
+          />
+        </a>
+        <div class="flex items-center gap-9 md:gap-12">
+          <a class="h5" href="../../index.html">Home</a>
+          <a class="h5" href="../menu/index.html">Menu</a>
+          <a class="h5" href="../contact/index.html">Contact</a>
+        </div>
+        <p class="opacity-60">© 2025 The Nook. All rights reserved.</p>
+      </section>
+    </main>
+
+    <style>
+      .testimonial-container {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .testimonial-track {
+        display: flex;
+        gap: 1.5rem;
+        animation: scroll 60s linear infinite;
+        width: fit-content;
+      }
+
+      .testimonial-card {
+        min-width: 320px;
+        max-width: 320px;
+        padding: 1.5rem;
+        background-color: var(--beige-500);
+        border-radius: 0;
+        flex-shrink: 0;
+      }
+
+      @media (min-width: 768px) {
+        .testimonial-card {
+          min-width: 400px;
+          max-width: 400px;
+          padding: 2rem;
+        }
+        
+        .testimonial-track {
+          gap: 2rem;
+        }
+      }
+
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      .testimonial-track:hover {
+        animation-play-state: paused;
+      }
+    </style>
+
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>

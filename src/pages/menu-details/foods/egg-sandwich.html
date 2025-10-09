@@ -21,7 +21,8 @@
         <div
           class="flex items-center justify-between px-4 md:px-6 py-3 relative"
         >
-          <div class="flex-shrink-0 px-2">
+          <!-- Logo -->
+          <a href="../../../index.html" class="flex-shrink-0 px-2">
             <img
               src="../../../../public/logo/with-text-dark.svg"
               alt="Logo"
@@ -32,8 +33,9 @@
               alt="Logo"
               class="w-auto h-full md:hidden"
             />
-          </div>
+          </a>
 
+          <!-- Desktop Navigation -->
           <div
             class="hidden md:flex items-center gap-9 h6 absolute left-1/2 transform -translate-x-1/2"
           >
@@ -44,8 +46,17 @@
             >
             <a
               href="../../menu/index.html"
-              class="hover:opacity-60 transition-opacity"
+              class="hover:opacity-60 transition-opacity underline underline-offset-4"
               >Menu</a
+            >
+            <a
+              class="hover:opacity-60 transition-opacity"
+              >Membership</a
+            >
+            <a
+              href="../../about/index.html"
+              class="hover:opacity-60 transition-opacity"
+              >About Us</a
             >
             <a
               href="../../contact/index.html"
@@ -54,6 +65,7 @@
             >
           </div>
 
+          <!-- Right Side -->
           <div class="flex items-center gap-3 md:gap-4">
             <a
               href="../../booking/index.html"
@@ -77,6 +89,7 @@
               </svg>
             </a>
 
+            <!-- Mobile Menu Toggle -->
             <button
               class="md:hidden p-2"
               onclick="document.getElementById('mobileMenu').classList.toggle('hidden')"
@@ -89,30 +102,41 @@
             </button>
           </div>
 
+          <!-- Mobile Menu Dropdown -->
           <div
             id="mobileMenu"
             class="hidden md:hidden absolute top-full left-0 right-0 border-t-black/10 border-t-[1px] bg-white p-6"
           >
             <div class="flex flex-col h4 gap-5">
               <a
-                href="../../../index.html"
-                class="hover:opacity-60 transition-opacity"
-                >Home</a
-              >
-              <a
-                href="../../menu/index.html"
-                class="hover:opacity-60 transition-opacity"
-                >Menu</a
-              >
-              <a
-                href="../../contact/index.html"
-                class="hover:opacity-60 transition-opacity"
-                >Contact</a
-              >
+              href="../../../index.html"
+              class="hover:opacity-60 transition-opacity"
+              >Home</a
+            >
+            <a
+              href="../../menu/index.html"
+              class="hover:opacity-60 transition-opacity"
+              >Menu</a
+            >
+            <a
+              class="hover:opacity-60 transition-opacity"
+              >Membership</a
+            >
+            <a
+              href="../../about/index.html"
+              class="hover:opacity-60 transition-opacity"
+              >About Us</a
+            >
+            <a
+              href="../../contact/index.html"
+              class="hover:opacity-60 transition-opacity"
+              >Contact</a
+            >
             </div>
           </div>
         </div>
       </nav>
+
       <div class="w-full flex flex-col p-4 gap-4">
 
       <!-- Product Details Section -->
@@ -137,9 +161,7 @@
               <div class="flex flex-col gap-2 md:gap-3">
                 <p class="h5">About</p>
                 <p class="opacity-60">
-                  The breakfast classic. Fluffy scrambled eggs with melted cheddar on a toasted 
-                  brioche bun. Simple, affordable, and satisfying. Perfect for early morning 
-                  study sessions or late-night cram fuel.
+                  Crispy Toast with Fluffy Scrambled Egg and Melted Cheddar Cheese. The breakfast classic — simple, affordable, and satisfying. Perfect for early morning study sessions or late-night cram fuel.
                 </p>
               </div>
               
